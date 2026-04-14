@@ -1,0 +1,148 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+  color: #d81b60;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero {
+  background-color: #fff1f6;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero-content p {
+  color: black;
+}
+
+.hero-buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: #d81b60;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #d81b60;
+  border: 2px solid #d81b60;
+}
+
+.sobre .container {
+  display: flex;
+  padding: 50px 20px;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sobre img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.portfolio {
+  background: #fff0f5;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.depoimentos {
+  padding: 50px 20px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.comentarios blockquote {
+  background: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 500px;
+  border-left: 5px solid #d81b60;
+}
+
+.servicos {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.servicos ul {
+  list-style: none;
+  padding: 0;
+  max-width: 500px;
+  margin: auto;
+}
+
+.servicos li {
+  background: #fff5f7;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.servicos a {
+  float: right;
+  color: #d81b60;
+  font-weight: bold;
+}
+
+.contato {
+  background: #fce4ec;
+  padding: 50px 20px;
+  text-align: center;
+}
+.maps {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+footer {
+  background: #d81b60;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
