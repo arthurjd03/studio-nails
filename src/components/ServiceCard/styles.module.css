@@ -1,0 +1,28 @@
+:root {
+  --background: #d81b60;
+}
+
+.services {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+  max-width: 500px;
+  margin: auto;
+}
+
+.services li {
+  background: #fff5f7;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.services a {
+  float: right;
+  color: #d81b60;
+  font-weight: bold;
+}
