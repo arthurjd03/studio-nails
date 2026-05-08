@@ -1,9 +1,17 @@
+import AboutMe from "@/components/About";
+import ContactMe from "@/components/Contact";
+import Gallery from "@/components/Gallery";
+import Hero from "@/components/Hero";
+import ServiceSelector from "@/components/ServiceSelector";
 
 export default function HomePage() {
   return (
-    <div>
-      <h1 className="text-5xl font-bold text-red-400 hover:text-red-50 hover:bg-blue-500 transition duration-600">Texto do meu site
-      </h1>
-    </div>
+    <>
+      <Hero />
+      <AboutMe />
+      <ContactMe />
+      <Gallery />
+      <ServiceSelector />
+    </>
   );
 }

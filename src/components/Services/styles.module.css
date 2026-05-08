@@ -1,5 +1,5 @@
 :root {
-  --background: #d81b60;
+  --background: #f3d2b0;
 }
 
 .services {
@@ -15,7 +15,7 @@
 }
 
 .services li {
-  background: #fff5f7;
+  background: #d81b60;
   margin: 10px 0;
   padding: 15px;
   border-radius: 8px;

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ServiceCards from "@/components/ServiceCard";
 
 export const metadata: Metadata = {
   title: "Suellen Nails",
@@ -14,7 +13,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <ServiceCards/>
       <body>{children}</body>
     </html>
   );
