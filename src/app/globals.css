@@ -1,11 +1,16 @@
-@import "tailwindcss";
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root {
   --background: #d81b60;
 }
 
+html,
 body {
-  background: var(--background);
-  color: white;
+  max-width: 100%;
+  scroll-behavior: smooth;
+  background: #fde9d6;
   font-family: Arial, Helvetica, sans-serif;
 }

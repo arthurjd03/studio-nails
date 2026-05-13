@@ -8,8 +8,7 @@ type ServiceCardProps = {
 export default function ServiceCard({ service, selectedServices, setSelectedServices }: ServiceCardProps) {
 
   const isSelected = selectedServices.some((item) => item.id === service.id
-)
-
+) 
 function toggleService() {
   if (isSelected) {
     setSelectedServices(

@@ -1,4 +1,5 @@
 // Fotos reais dos trabalhos.
+import styles from "./styles.module.css";
 
 export default function Gallery() {
   return (

@@ -3,10 +3,11 @@
 // Instagram
 
 // horário de atendimento
+import styles from "./styles.module.css";
 
 export default function ContactMe() {
   return (
-    <section className="contato">
+    <section id="contato" className={styles.contato}>
       <h2>Onde me encontrar</h2>
       <p>
         Instagram:
