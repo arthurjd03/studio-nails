@@ -18,17 +18,29 @@
   font-family: var(--font-script);
   font-size: clamp(2.1rem, 3vw, 4rem);
   color: #e5396b;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
 }
 
 .logo span {
   font-family: var(--font-title);
   font-size: 0.9rem;
-  margin-left: 4px;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
+  align-self: flex-end;
 }
 
 .cta {
-  display: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #e5396b;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
 }
 
 .nav {
@@ -36,9 +48,13 @@
 }
 
 @media (min-width: 768px) {
+  .container {
+
+    justify-content: space-around;
+  }
   .nav {
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
   }
 
@@ -46,7 +62,7 @@
     position: relative;
     color: #333;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   .nav a::after {
@@ -64,18 +80,6 @@
 
   .nav a:hover::after {
     transform: scaleX(1);
-  }
-  .cta {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: #e5396b;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: all 0.25s ease;
   }
 
   .cta:hover {

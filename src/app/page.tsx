@@ -8,13 +8,15 @@ import ServiceSelector from "@/components/ServiceSelector";
 
 export default function HomePage() {
   return (
-    <Container>
+    <>
       <Menu />
+    <Container>
       <Hero />
       <AboutMe />
       <Gallery />
       <ServiceSelector />
       <ContactMe />
     </Container>
+    </>
   );
 }

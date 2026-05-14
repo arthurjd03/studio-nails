@@ -14,16 +14,17 @@ export default function Services({
 }: ServicesProps) {
 
   return (
-    <section className={styles.services}>
+    <section id="servicos" className={styles.services}>
       <h3 className={styles.title}>Serviços e Valores</h3>
       <h1>Esclha o seu cuidado</h1>
       <ul>
         {nailServices.map((service) => (
-          <ServiceCard 
-          key={service.id} 
-          service={service} 
-          selectedServices={selectedServices}
-          setSelectedServices={setSelectedServices}/>
+          <ServiceCard
+            key={service.id}
+            service={service}
+            selectedServices={selectedServices}
+            setSelectedServices={setSelectedServices}
+          />
         ))}
       </ul>
     </section>

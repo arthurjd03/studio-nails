@@ -4,9 +4,24 @@ import styles from "./styles.module.css";
 export default function Hero() {
   return (
     <section className={styles.container}>
+      <div className={styles.image}>
+        <div className={`${styles.circle} ${styles.c1}`} />
+        <div className={`${styles.circle} ${styles.c2}`} />
+        <div className={`${styles.circle} ${styles.c3}`} />
+        <div className={`${styles.circle} ${styles.c4}`} />
+        <div className={`${styles.circle} ${styles.c5}`} />
+        <div className={`${styles.circle} ${styles.c6}`} />
+        <Image
+          src="/images/profissional.jpeg"
+          alt="Profissional de manicure"
+          width={300}
+          height={410}
+          priority
+        />
+      </div>
       <div className={styles.content}>
         <h1>
-          Cuidado que <span>realça sua beleza</span>
+          <small>Cuidado que</small> <span>realça sua</span><em> beleza</em>
         </h1>
 
         <p>
@@ -25,15 +40,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className={styles.image}>
-        <Image
-          src="/images/profissional.jpeg"
-          alt="Profissional de manicure"
-          width={300}
-          height={410}
-          priority
-        />
-      </div>
     </section>
   );
 }

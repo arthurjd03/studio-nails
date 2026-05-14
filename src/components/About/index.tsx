@@ -1,26 +1,38 @@
-
+import Image from "next/image";
 import styles from "./styles.module.css";
 
 export default function AboutMe() {
   return (
-    <section className={styles.about}>
+    <section id="sobre" className={styles.container}>
+      <div className={styles.imageWrapper}>
+        <section className={styles.image}
+        ></section>
+        <div className={styles.heartBadge}>♥</div>
+      </div>
 
+      <div className={styles.content}>
+        <small className={styles.label}>Sobre mim</small>
 
-        <div className={styles.text}>
-          <h2>Sobre mim</h2>
+        <h2>
+          Prazer, eu sou a sua <span>nail designer!</span>
+        </h2>
 
+        <div className={styles.divider} />
 
+        <p>
+          Profissional especializada em cuidados com unhas, oferecendo serviços
+          de manicure e pedicure com atenção aos detalhes e produtos de
+          qualidade.
+        </p>
+        <p>
+          Atendimento personalizado para garantir conforto, beleza e autoestima
+          para cada cliente.
+        </p>
 
-          <p>
-            Prazer, eu sou a sua nail designer!
-
-            Profissional especializada em cuidados com unhas, oferecendo
-            serviços de manicure e pedicure com SOBRE MIM atenção aos detalhes e
-            produtos de qualidade. Prazer, eu sou a Atendimento personalizado
-            para garantir beleza e autoestima para cada cliente.
-          </p>
-        </div>
-          <button>Me conheça melhor</button>
+        <a href="#contato" className={styles.cta}>
+          Me conhecer melhor
+        </a>
+      </div>
     </section>
   );
 }
