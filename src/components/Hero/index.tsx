@@ -12,16 +12,18 @@ export default function Hero() {
         <div className={`${styles.circle} ${styles.c5}`} />
         <div className={`${styles.circle} ${styles.c6}`} />
         <Image
-          src="/images/profissional.jpeg"
+          src="/images/about/suellen.webp"
           alt="Profissional de manicure"
           width={300}
           height={410}
+          quality={90}
           priority
         />
       </div>
       <div className={styles.content}>
         <h1>
-          <small>Cuidado que</small> <span>realça sua</span><em> beleza</em>
+          <small>Cuidado que</small> <span>realça sua</span>
+          <em> beleza</em>
         </h1>
 
         <p>
@@ -39,7 +41,6 @@ export default function Hero() {
           </a>
         </div>
       </div>
-
     </section>
   );
 }

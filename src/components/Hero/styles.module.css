@@ -171,7 +171,6 @@
     flex-direction: row-reverse;
     justify-content: center;
     gap: 10rem;
-    padding: 3rem 4rem;
   }
 
   .content {

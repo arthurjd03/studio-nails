@@ -7,3 +7,23 @@ export const nailServices: Service[] = [
   { id: 4, name: "Cuticulagem", price: 40 },
   { id: 5, name: "Esmaltação", price: 40 },
 ];
+
+type GalleryImage = {
+  src: string;
+  alt: string
+}
+
+export const nailGallery: GalleryImage[] = [
+  { src: "/images/gallery/nails/nail-1", alt: "" },
+  { src: "/images/gallery/nails/nail-1", alt: "" },
+  { src: "/images/gallery/nails/nail-1", alt: "" },
+  { src: "/images/gallery/nails/nail-1", alt: "" },
+  { src: "/images/gallery/nails/nail-1", alt: "" },
+  { src: "/images/gallery/nails/nail-1", alt: "" },
+  { src: "/images/gallery/nails/nail-1", alt: "" },
+  { src: "/images/gallery/nails/nail-1", alt: "" },
+  { src: "/images/gallery/nails/nail-1", alt: "" },
+  { src: "/images/gallery/nails/nail-1", alt: "" },
+  { src: "/images/gallery/nails/nail-1", alt: "" },
+  { src: "/images/gallery/nails/nail-1", alt: "" },
+]
