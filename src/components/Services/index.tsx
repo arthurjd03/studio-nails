@@ -1,32 +1,34 @@
+"use client";
+
 import styles from "./styles.module.css";
 import ServiceCard from "./ServiceCard";
 import { nailServices } from "@/constants";
-import { Service } from "@/types/service";
+import { useCart } from "@/context/CartContext";
 
-type ServicesProps = {
-  selectedServices: Service[];
-  setSelectedServices: React.Dispatch<React.SetStateAction<Service[]>>;
-};
-
-export default function Services({
-  selectedServices,
-  setSelectedServices,
-}: ServicesProps) {
-
+export default function Services() {
+  const { adicionar, remover, verificar, abrirModal, services } = useCart();
   return (
     <section id="servicos" className={styles.services}>
-      <h3 className={styles.title}>Serviços e Valores</h3>
-      <h1>Esclha o seu cuidado</h1>
-      <ul>
+      <small className={styles.label}>Serviços e Valores</small>
+      <h2 className={styles.title}>Escolha o seu cuidado</h2>
+      <ul className={styles.list}>
         {nailServices.map((service) => (
-          <ServiceCard
-            key={service.id}
-            service={service}
-            selectedServices={selectedServices}
-            setSelectedServices={setSelectedServices}
-          />
+          <li key={service.id}>
+            <ServiceCard
+              service={service}
+              isSelected={verificar(service.id)}
+              onToggle={() =>
+                verificar(service.id) ? remover(service.id) : adicionar(service)
+              }
+            />
+          </li>
         ))}
       </ul>
+        <button
+        className={styles.btnCreate}
+        onClick={abrirModal}
+        disabled={services.length === 0}
+        >Criar serviços</button>
     </section>
   );
 }

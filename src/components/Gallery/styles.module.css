@@ -1,0 +1,235 @@
+/* — Seção — */
+.gallerySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 1.5rem;
+}
+
+.label {
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #e5396b;
+  font-weight: 600;
+}
+
+.galleryTitle {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: #1a1a1a;
+  text-align: center;
+}
+
+/* — Cards — */
+.cards {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #e5396b;
+  box-shadow: 0 8px 30px rgba(229, 57, 107, 0.15);
+}
+
+.cardImage {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.cardImageNails {
+  background: linear-gradient(135deg, #f5b8cb 0%, #e5396b 100%);
+}
+
+.cardImageFeet {
+  background: linear-gradient(135deg, #f5b8cb 0%, #c2185b 100%);
+}
+
+.cardContent {
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardTitle {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.cardSub {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 2px;
+}
+
+.cardArrow {
+  width: 32px;
+  height: 32px;
+  background: #fce8ef;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5396b;
+}
+
+/* — Modal — */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 650px;
+  animation: scaleIn 0.25s ease;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.modalTitle {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  color: #1a1a1a;
+}
+
+.closeBtn {
+  width: 36px;
+  height: 36px;
+  background: #fce8ef;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #e5396b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: #e5396b;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+@media (min-width: 768px) {
+  .gallerySection {
+    padding: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .gallerySection {
+    padding: 4rem 6rem;
+  }
+}
+.emblaWrapper {
+  position: relative;
+  width: 100%;
+  padding: 1rem 0 2.5rem;
+}
+.emblaContainer {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.emblaSlide {
+  flex: 0 0 70%;
+  min-width: 0;
+  transition: all 0.4s ease;
+}
+
+.emblaSlide img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+.emblaSlideActive {
+  opacity: 1;
+  filter: none;
+  transform: scale(1);
+}
+
+.emblaSlideInactive {
+  opacity: 0.35;
+  filter: blur(2px);
+  transform: scale(0.9);
+}
+.arrows {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.arrowBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+
+  transition: all 0.25s ease;
+}
+
+.arrowBtn:hover {
+  background: #e5396b;
+  color: white;
+  transform: translateY(-2px);
+}

@@ -3,9 +3,11 @@ import Container from "@/components/Container";
 import Hero from "@/components/Hero";
 import AboutMe from "@/components/About";
 import GallerySlide from "@/components/Gallery";
-import ServiceSelector from "@/components/ServiceSelector";
+import Services from "@/components/Services";
+import OrderSummary from "@/components/OrderSummary";
 import ContactMe from "@/components/Contact";
 import PaymentMethods from "@/components/PaymentMethods";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
@@ -15,9 +17,11 @@ export default function HomePage() {
         <Hero />
         <AboutMe />
         <GallerySlide />
-        <ServiceSelector />
+        <Services />
+        <OrderSummary />
         <ContactMe />
         <PaymentMethods />
+        <Footer/>
       </Container>
     </>
   );

@@ -1,20 +1,85 @@
-// WhatsApp
-
-// Instagram
-
-// horário de atendimento
+import { MessageCircle, Camera , MapPin, Clock } from "lucide-react";
 import styles from "./styles.module.css";
+
+const hours = [
+  { day: "Terça", time: "8h — 18h" },
+  { day: "Quarta", time: "8h — 18h" },
+  { day: "Quinta", time: "8h — 18h" },
+  { day: "Sexta", time: "8h — 18h" },
+  { day: "Sábado", time: "8h — 18h" },
+  { day: "Segunda", time: "Fechado" },
+  { day: "Domingo", time: "Fechado" },
+];
+
+const contacts = [
+  {
+    icon: <MessageCircle size={26} />,
+    title: "WhatsApp",
+    sub: "Agendar horário",
+    href: "https://wa.me/5538999999999",
+  },
+  {
+    icon: <Camera size={26} />,
+    title: "Instagram",
+    sub: "@suellen.nails",
+    href: "https://instagram.com/suellen.nails",
+  },
+  {
+    icon: <MapPin size={26} />,
+    title: "Localização",
+    sub: "Atendimento a domicílio — Paracatu, MG",
+    href: null,
+  },
+];
 
 export default function ContactMe() {
   return (
-    <section id="contato" className={styles.contato}>
-      <h2>Onde me encontrar</h2>
-      <p>
-        Instagram:
-        <a href="https://instagram.com/seunome.nails" target="_blank">
-          @seunome.nails
-        </a>
-      </p>
+    <section id="contato" className={styles.container}>
+      <small className={styles.label}>Contato</small>
+      <h2 className={styles.title}>Onde me encontrar</h2>
+
+      <div className={styles.cards}>
+        {contacts.map((contact) =>
+          contact.href ? (
+            <a
+              key={contact.title}
+              href={contact.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.card}
+            >
+              <div className={styles.icon}>{contact.icon}</div>
+              <span className={styles.cardTitle}>{contact.title}</span>
+              <span className={styles.cardSub}>{contact.sub}</span>
+            </a>
+          ) : (
+            <div key={contact.title} className={styles.card}>
+              <div className={styles.icon}>{contact.icon}</div>
+              <span className={styles.cardTitle}>{contact.title}</span>
+              <span className={styles.cardSub}>{contact.sub}</span>
+            </div>
+          ),
+        )}
+      </div>
+
+      <div className={styles.hours}>
+        <h3 className={styles.hoursTitle}>
+          <Clock size={18} />
+          Horário de atendimento
+        </h3>
+        <div className={styles.hoursList}>
+          {hours.map((h) => (
+            <div key={h.day} className={styles.hourRow}>
+              <span className={styles.hourDay}>{h.day}</span>
+              <span
+                className={`${styles.hourTime} ${h.time === "Fechado" ? styles.closed : ""}`}
+              >
+                {h.time}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

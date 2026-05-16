@@ -21,7 +21,7 @@
   font-size: 0.72rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #e5396b;
+  color: #ae284e;
   font-weight: 600;
 }
 .lineone {
@@ -40,7 +40,6 @@
 .heart {
   color: #e5396b;
 }
-
 
 .content h2 {
   font-family: var(--font-title);
@@ -119,7 +118,7 @@
   background: white;
   border-radius: 16px;
   padding: 14px 18px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -130,13 +129,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .2rem;
+  gap: 0.2rem;
 }
 
 .statValue {
   display: flex;
   align-items: center;
-  gap: .3rem;
+  gap: 0.3rem;
   font-family: var(--font-title);
   font-size: 1.2rem;
   font-weight: 700;
@@ -158,7 +157,6 @@
   background: #edc5d1;
   flex-shrink: 0;
 }
-
 
 /* — Tablet — */
 @media (min-width: 768px) {

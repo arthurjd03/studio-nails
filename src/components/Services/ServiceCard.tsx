@@ -1,27 +1,39 @@
 import { Service } from "@/types/service";
+import styles from "./styles.module.css";
 
 type ServiceCardProps = {
   service: Service;
-  selectedServices: Service[];
-  setSelectedServices: React.Dispatch<React.SetStateAction<Service[]>>;
+  isSelected: boolean;
+  onToggle: () => void;
 };
-export default function ServiceCard({ service, selectedServices, setSelectedServices }: ServiceCardProps) {
 
-  const isSelected = selectedServices.some((item) => item.id === service.id
-) 
-function toggleService() {
-  if (isSelected) {
-    setSelectedServices(
-      selectedServices.filter((item) => item.id !== service.id)
-    )
-  } else {
-    setSelectedServices([...selectedServices, service])
-  }
-}
-
+export default function ServiceCard({
+  service,
+  isSelected,
+  onToggle,
+}: ServiceCardProps) {
   return (
-    <li onClick={toggleService}>
-      {service.name} - R$ {service.price}
-    </li>
+    <div
+      className={`${styles.card} ${isSelected ? styles.cardSelected : ""}`}
+      onClick={onToggle}
+    >
+      <div className={styles.info}>
+        <h3 className={styles.name}>{service.name}</h3>
+        <span className={styles.price}>
+          {service.price.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </span>
+      </div>
+
+      <input
+        className={styles.checkbox}
+        type="checkbox"
+        checked={isSelected}
+        onChange={onToggle}
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
   );
 }

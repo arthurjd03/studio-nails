@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Playfair_Display, Great_Vibes } from "next/font/google"
+import { CartProvider } from "@/context/CartContext";
 
 export const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -25,9 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${playfair.variable} ${greatVibes.variable} font-sans`}>
+      <body className={`${playfair.variable} ${greatVibes.variable}`}>
+      <CartProvider>
         {children}
+      </CartProvider>
       </body>
+
     </html>
   );
 }

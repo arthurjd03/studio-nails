@@ -1,28 +1,127 @@
-:root {
-  --background: #f3d2b0;
+/* Css ServiceCard */
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 16px;
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
 }
 
+.card:hover {
+  border-color: #e5396b;
+  box-shadow: 0 8px 24px rgba(229, 57, 107, 0.12);
+}
+
+.cardSelected {
+  border-color: #e5396b;
+  background: #fff5f8;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+.price {
+  font-size: 0.95rem;
+  color: #e5396b;
+  font-weight: 600;
+}
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+  accent-color: #e5396b;
+  cursor: pointer;
+}
+
+/* Css index */
 .services {
-  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 1.5rem;
+}
+
+.label {
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #e5396b;
+  font-weight: 600;
+}
+
+.title {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: #1a1a1a;
   text-align: center;
 }
 
-.services ul {
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 700px;
   list-style: none;
   padding: 0;
-  max-width: 500px;
-  margin: auto;
+}
+/* Button Create */
+.btnCreate {
+  padding: 14px 32px;
+  background: #e5396b;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 1rem;
 }
 
-.services li {
-  background: #d81b60;
-  margin: 10px 0;
-  padding: 15px;
-  border-radius: 8px;
+.btnCreate:disabled {
+  background: #f5b8cb;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
-.services a {
-  float: right;
-  color: #d81b60;
-  font-weight: bold;
+.btnCreate:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px #e5396a3f;
+}
+
+@media (min-width: 768px) {
+  .services {
+    padding: 4rem;
+  }
+
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .services {
+    padding: 4rem 6rem;
+  }
+
+  .list {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
