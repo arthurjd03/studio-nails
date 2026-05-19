@@ -3,21 +3,21 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding: 3rem 1.5rem;
+  padding: 3rem var(--padding-inline);
 }
 
 .label {
   font-size: 0.72rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #e5396b;
+  color: var(--color-primary);
   font-weight: 600;
 }
 
 .title {
   font-family: var(--font-title);
   font-size: clamp(1.8rem, 4vw, 2.4rem);
-  color: #1a1a1a;
+  color: var(--color-text);
   text-align: center;
 }
 
@@ -25,10 +25,10 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 860px;
 }
 
 .card {
@@ -40,15 +40,20 @@
   align-items: center;
   gap: 0.75rem;
   flex: 1;
-  min-width: 180px;
+  min-width: 160px;
   border: 2px solid transparent;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   text-decoration: none;
   transition: all 0.25s ease;
+  cursor: default;
 }
 
-.card:hover {
-  border-color: #e5396b;
+a.card {
+  cursor: pointer;
+}
+
+a.card:hover {
+  border-color: var(--color-primary);
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(229, 57, 107, 0.12);
 }
@@ -56,18 +61,18 @@
 .icon {
   width: 52px;
   height: 52px;
-  background: #fce8ef;
+  background: var(--color-primary-light);
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e5396b;
+  color: var(--color-primary);
 }
 
 .cardTitle {
   font-family: var(--font-title);
   font-size: 1rem;
-  color: #1a1a1a;
+  color: var(--color-text);
 }
 
 .cardSub {
@@ -76,20 +81,20 @@
   text-align: center;
 }
 
-/* — Horários — */
+/* — Hours — */
 .hours {
   background: white;
   border-radius: 16px;
   padding: 1.5rem 2rem;
   width: 100%;
-  max-width: 800px;
+  max-width: 860px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .hoursTitle {
   font-family: var(--font-title);
   font-size: 1.1rem;
-  color: #1a1a1a;
+  color: var(--color-text);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -107,15 +112,15 @@
   justify-content: space-between;
   font-size: 0.88rem;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #fce8ef;
+  border-bottom: 1px solid var(--color-primary-light);
 }
 
 .hourDay {
-  color: #555;
+  color: var(--color-text-muted);
 }
 
 .hourTime {
-  color: #e5396b;
+  color: var(--color-primary);
   font-weight: 600;
 }
 
@@ -124,16 +129,39 @@
   font-weight: 400;
 }
 
+/* — Mobile large — */
+@media (min-width: 480px) {
+  .cards {
+    gap: 1.5rem;
+  }
+}
+
 /* — Tablet — */
 @media (min-width: 768px) {
   .container {
-    padding: 4rem;
+    padding: 4rem var(--padding-inline);
+    gap: 2.5rem;
+  }
+
+  .hours {
+    padding: 2rem 2.5rem;
+  }
+}
+
+/* — Tablet large — */
+@media (min-width: 1024px) {
+  .cards {
+    max-width: 900px;
+  }
+
+  .hours {
+    max-width: 900px;
   }
 }
 
 /* — Desktop — */
 @media (min-width: 1280px) {
   .container {
-    padding: 4rem 6rem;
+    padding: 4rem var(--padding-inline);
   }
 }

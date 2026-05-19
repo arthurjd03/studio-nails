@@ -1,12 +1,18 @@
 "use client";
+
 import { useEffect } from "react";
 import { X } from "lucide-react";
 import GalleryCarousel from "./GalleryCarousel";
 import styles from "./styles.module.css";
 
+type GalleryImage = {
+  src: string;
+  alt: string;
+};
+
 type GalleryModalProps = {
   title: string;
-  images: { src: string; alt: string }[];
+  images: GalleryImage[];
   onClose: () => void;
 };
 
@@ -15,6 +21,7 @@ export default function GalleryModal({
   images,
   onClose,
 }: GalleryModalProps) {
+  // close on ESC key
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -23,7 +30,7 @@ export default function GalleryModal({
     return () => document.removeEventListener("keydown", handleKey);
   }, [onClose]);
 
-  // trava o scroll do body enquanto modal está aberto
+  // lock body scroll while modal is open
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -44,7 +51,7 @@ export default function GalleryModal({
           <button
             className={styles.closeBtn}
             onClick={onClose}
-            aria-label="Fechar"
+            aria-label="Close"
           >
             <X size={18} />
           </button>

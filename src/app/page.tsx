@@ -18,11 +18,11 @@ export default function HomePage() {
         <AboutMe />
         <GallerySlide />
         <Services />
-        <OrderSummary />
         <ContactMe />
         <PaymentMethods />
-        <Footer/>
       </Container>
+        <Footer/>
+        <OrderSummary />
     </>
   );
 }

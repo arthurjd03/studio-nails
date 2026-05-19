@@ -1,7 +1,19 @@
-import { MessageCircle, Camera , MapPin, Clock } from "lucide-react";
+import { MessageCircle, Camera, MapPin, Clock } from "lucide-react";
 import styles from "./styles.module.css";
 
-const hours = [
+type Hour = {
+  day: string;
+  time: string;
+};
+
+type Contact = {
+  icon: React.ReactNode;
+  title: string;
+  sub: string;
+  href: string | null;
+};
+
+const hours: Hour[] = [
   { day: "Terça", time: "8h — 18h" },
   { day: "Quarta", time: "8h — 18h" },
   { day: "Quinta", time: "8h — 18h" },
@@ -11,7 +23,7 @@ const hours = [
   { day: "Domingo", time: "Fechado" },
 ];
 
-const contacts = [
+const contacts: Contact[] = [
   {
     icon: <MessageCircle size={26} />,
     title: "WhatsApp",
@@ -34,7 +46,7 @@ const contacts = [
 
 export default function ContactMe() {
   return (
-    <section id="contato" className={styles.container}>
+    <section id="contact" className={styles.container}>
       <small className={styles.label}>Contato</small>
       <h2 className={styles.title}>Onde me encontrar</h2>
 

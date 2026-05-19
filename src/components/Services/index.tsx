@@ -6,9 +6,10 @@ import { nailServices } from "@/constants";
 import { useCart } from "@/context/CartContext";
 
 export default function Services() {
-  const { adicionar, remover, verificar, abrirModal, services } = useCart();
+  const { addService, removeService, hasService, openModal, services } = useCart();
+
   return (
-    <section id="servicos" className={styles.services}>
+    <section id="services" className={styles.services}>
       <small className={styles.label}>Serviços e Valores</small>
       <h2 className={styles.title}>Escolha o seu cuidado</h2>
       <ul className={styles.list}>
@@ -16,19 +17,23 @@ export default function Services() {
           <li key={service.id}>
             <ServiceCard
               service={service}
-              isSelected={verificar(service.id)}
+              isSelected={hasService(service.id)}
               onToggle={() =>
-                verificar(service.id) ? remover(service.id) : adicionar(service)
+                hasService(service.id)
+                  ? removeService(service.id)
+                  : addService(service)
               }
             />
           </li>
         ))}
       </ul>
-        <button
+      <button
         className={styles.btnCreate}
-        onClick={abrirModal}
+        onClick={openModal}
         disabled={services.length === 0}
-        >Criar serviços</button>
+      >
+        Criar serviços
+      </button>
     </section>
   );
 }

@@ -5,8 +5,13 @@ import { useCallback, useEffect, useState } from "react";
 import NavigationArrows from "./NavigationArrows";
 import useEmblaCarousel from "embla-carousel-react";
 
+type GalleryImage = {
+  src: string;
+  alt: string;
+};
+
 type GalleryCarouselProps = {
-  images: { src: string; alt: string }[];
+  images: GalleryImage[];
 };
 
 export default function GalleryCarousel({ images }: GalleryCarouselProps) {
@@ -30,7 +35,7 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
   }, [emblaApi]);
 
   return (
-    <div className={styles.emblawrapper}>
+    <div className={styles.emblaWrapper}>
       <div className={styles.emblaViewport} ref={emblaRef}>
         <div className={styles.emblaContainer}>
           {loopedImages.map((image, index) => (

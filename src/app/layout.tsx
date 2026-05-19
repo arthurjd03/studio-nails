@@ -1,37 +1,35 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Playfair_Display, Great_Vibes } from "next/font/google"
+import { Playfair_Display, Great_Vibes } from "next/font/google";
 import { CartProvider } from "@/context/CartContext";
 
-export const playfair = Playfair_Display({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-title"
-})
+  variable: "--font-title",
+  display: "swap",
+});
 
-export const greatVibes = Great_Vibes({
+const greatVibes = Great_Vibes({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-script"
-})
+  variable: "--font-script",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Suellen Nails",
-  description: "Unhas de qualidade com estilo. Agende seu horário com Suellen.",
+  title: "Suellen Nails - Manicure Profissional",
+  description:
+    "Manicure e pedicure com atendimento personalizado. Agende seu horário agora.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${playfair.variable} ${greatVibes.variable}`}>
-      <CartProvider>
-        {children}
-      </CartProvider>
+      <body className={`${playfair.variable} ${greatVibes.variable} antialiased`}>
+        <CartProvider>{children}</CartProvider>
       </body>
-
     </html>
   );
 }

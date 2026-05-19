@@ -4,10 +4,10 @@
   background: #fef0e2;
   align-items: center;
   gap: 3rem;
-  padding: 3rem 1.5rem;
+  padding: 3rem var(--padding-inline);
 }
 
-/* — Conteúdo — */
+/* — Content — */
 .content {
   display: flex;
   flex-direction: column;
@@ -21,15 +21,17 @@
   font-size: 0.72rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #ae284e;
+  color: var(--color-primary);
   font-weight: 600;
 }
-.lineone {
+
+.dividerLine {
   display: flex;
   align-items: center;
   gap: 10px;
   width: 60%;
 }
+
 .line {
   flex: 1;
   height: 1px;
@@ -38,7 +40,7 @@
 }
 
 .heart {
-  color: #e5396b;
+  color: var(--color-primary);
 }
 
 .content h2 {
@@ -56,24 +58,16 @@
   letter-spacing: 3px;
 }
 
-.divider {
-  width: 40px;
-  height: 2px;
-  background: #e5396b;
-  border-radius: 2px;
-  opacity: 0.4;
-}
-
 .content p {
   font-size: 0.95rem;
-  color: #555;
+  color: var(--color-text-muted);
   line-height: 1.8;
 }
 
 .cta {
   display: inline-flex;
   align-items: center;
-  background: #e5396b;
+  background: var(--color-primary);
   color: white;
   padding: 12px 28px;
   border-radius: 12px;
@@ -83,7 +77,7 @@
   transition: all 0.25s ease;
 }
 
-/* — Imagem — */
+/* — Image — */
 .imageWrapper {
   position: relative;
   flex-shrink: 0;
@@ -101,7 +95,7 @@
   left: 14px;
   width: 42px;
   height: 42px;
-  background: #e5396b;
+  background: var(--color-primary);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -110,7 +104,7 @@
   z-index: 2;
 }
 
-/* — Card flutuante — */
+/* — Stats Card — */
 .statsCard {
   position: absolute;
   bottom: -20px;
@@ -139,7 +133,7 @@
   font-family: var(--font-title);
   font-size: 1.2rem;
   font-weight: 700;
-  color: #e5396b;
+  color: var(--color-primary);
 }
 
 .statLabel {
@@ -154,8 +148,16 @@
 .statDivider {
   width: 1px;
   height: 36px;
-  background: #edc5d1;
+  background: var(--color-primary-light);
   flex-shrink: 0;
+}
+
+/* — Mobile large — */
+@media (min-width: 480px) {
+  .statsCard {
+    right: -10px;
+    padding: 16px 20px;
+  }
 }
 
 /* — Tablet — */
@@ -164,7 +166,7 @@
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    padding: 4rem;
+    padding: 4rem var(--padding-inline);
     gap: 5rem;
   }
 
@@ -174,18 +176,26 @@
   }
 
   .statsCard {
-    right: -60px;
+    right: -40px;
   }
 
   .cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px #e5396a3f;
+    box-shadow: 0 8px 20px rgba(229, 57, 107, 0.25);
+  }
+}
+
+/* — Tablet large — */
+@media (min-width: 1024px) {
+  .statsCard {
+    right: -60px;
+    padding: 18px 24px;
   }
 }
 
 /* — Desktop — */
 @media (min-width: 1280px) {
   .container {
-    padding: 4rem 6rem;
+    padding: 4rem var(--padding-inline);
   }
 }

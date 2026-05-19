@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 
 export default function AboutMe() {
   return (
-    <section id="sobre" className={styles.container}>
+    <section id="aboutme" className={styles.container}>
       <div className={styles.content}>
         <small className={styles.label}>Sobre mim</small>
 
@@ -12,7 +12,7 @@ export default function AboutMe() {
           Prazer, eu sou a sua <span>nail designer!</span>
         </h2>
 
-        <div className={styles.lineone}>
+        <div className={styles.dividerLine}>
           <span className={styles.line} />
           <Heart size={16} className={styles.heart} />
           <span className={styles.line} />

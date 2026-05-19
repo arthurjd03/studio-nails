@@ -6,16 +6,16 @@ export default function Menu() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <h1 className={styles.logo}>
-          Suellen <span>Nails</span>
-        </h1>
+        <div className={styles.logo}>
+          <em>Suellen</em> <span>Nails</span>
+        </div>
 
         <nav className={styles.nav}>
-          <a href="#inicio">Início</a>
-          <a href="#sobre">Sobre mim</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#galeria">Galeria</a>
-          <a href="#contato">Contato</a>
+          <a href="#init">Início</a>
+          <a href="#aboutme">Sobre mim</a>
+          <a href="#services">Serviços</a>
+          <a href="#gallery">Galeria</a>
+          <a href="#contact">Contato</a>
         </nav>
 
         <a
