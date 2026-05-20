@@ -38,8 +38,8 @@ const contacts: Contact[] = [
   },
   {
     icon: <MapPin size={26} />,
-    title: "Localização",
-    sub: "Atendimento a domicílio — Paracatu, MG",
+    title: "Local de atendimento",
+    sub: "A domicílio — Paracatu, MG",
     href: null,
   },
 ];

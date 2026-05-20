@@ -231,23 +231,9 @@
   to   { transform: scale(1);    opacity: 1; }
 }
 
-/* — Mobile large — */
-@media (min-width: 480px) {
-  .emblaSlide {
-    flex: 0 0 75%;
-  }
-
-  .emblaSlide img {
-    height: 280px;
-  }
-}
 
 /* — Tablet — */
 @media (min-width: 768px) {
-  .gallerySection {
-    padding: 4rem var(--padding-inline);
-  }
-
   .cards {
     max-width: 800px;
   }

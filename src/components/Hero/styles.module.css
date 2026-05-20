@@ -27,7 +27,7 @@
 .circle {
   position: absolute;
   border-radius: 50%;
-  background: #eca499;
+  background: radial-gradient(circle,rgb(239, 51, 104) 28%, rgba(255, 98, 142, 0.56) 100%);
   animation: pulse 3s ease-in-out infinite;
 }
 
@@ -86,13 +86,23 @@
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.15); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
 }
 
 @keyframes pulseCenter {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.1); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 /* — Content — */
@@ -170,8 +180,14 @@
 
 /* — Mobile large — */
 @media (min-width: 480px) {
-  .c1 { width: 200px; height: 200px; }
-  .c5 { width: 150px; height: 150px; }
+  .c1 {
+    width: 200px;
+    height: 200px;
+  }
+  .c5 {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 /* — Tablet — */
@@ -219,9 +235,18 @@
     gap: 8rem;
   }
 
-  .c1 { width: 220px; height: 220px; }
-  .c3 { width: 130px; height: 130px; }
-  .c5 { width: 160px; height: 160px; }
+  .c1 {
+    width: 220px;
+    height: 220px;
+  }
+  .c3 {
+    width: 130px;
+    height: 130px;
+  }
+  .c5 {
+    width: 160px;
+    height: 160px;
+  }
 }
 
 /* — Desktop — */

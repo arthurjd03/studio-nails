@@ -6,7 +6,7 @@
   z-index: 50;
   background: rgba(255, 255, 255, 0.85);
   box-shadow: 0 0px 6px var(--color-primary-dark);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
 }
 
 .container {
@@ -50,7 +50,6 @@
 
 @media (min-width: 768px) {
   .container {
-
     justify-content: space-around;
   }
   .nav {

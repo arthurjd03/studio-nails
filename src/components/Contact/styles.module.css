@@ -129,12 +129,6 @@ a.card:hover {
   font-weight: 400;
 }
 
-/* — Mobile large — */
-@media (min-width: 480px) {
-  .cards {
-    gap: 1.5rem;
-  }
-}
 
 /* — Tablet — */
 @media (min-width: 768px) {
@@ -159,9 +153,3 @@ a.card:hover {
   }
 }
 
-/* — Desktop — */
-@media (min-width: 1280px) {
-  .container {
-    padding: 4rem var(--padding-inline);
-  }
-}

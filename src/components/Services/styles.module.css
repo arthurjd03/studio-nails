@@ -107,20 +107,12 @@
 }
 
 @media (min-width: 768px) {
-  .services {
-    padding: 4rem;
-  }
-
   .list {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 1280px) {
-  .services {
-    padding: 4rem 6rem;
-  }
-
   .list {
     grid-template-columns: repeat(1, 1fr);
   }

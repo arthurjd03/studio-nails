@@ -26,7 +26,7 @@ const payments = [
 
 export default function PaymentMethods() {
   return (
-    <section id="pagamento" className={styles.container}>
+    <section className={styles.container}>
       <small className={styles.label}>Pagamento</small>
       <h2 className={styles.title}>Formas de pagamento</h2>
       <p className={styles.subtitle}>

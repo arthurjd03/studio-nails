@@ -13,7 +13,6 @@ export default function Menu() {
         <nav className={styles.nav}>
           <a href="#init">Início</a>
           <a href="#aboutme">Sobre mim</a>
-          <a href="#services">Serviços</a>
           <a href="#gallery">Galeria</a>
           <a href="#contact">Contato</a>
         </nav>

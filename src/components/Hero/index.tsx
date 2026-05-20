@@ -36,7 +36,7 @@ export default function Hero() {
             Agendar horário
           </a>
 
-          <a href="#servicos" className={styles.ctaSecondary}>
+          <a href="#services" className={styles.ctaSecondary}>
             Ver serviços
           </a>
         </div>

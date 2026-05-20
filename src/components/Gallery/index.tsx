@@ -32,7 +32,7 @@ const galleryCards: GalleryCard[] = [
 
 const galleries = {
   nails: { title: "Manicure — Mãos", images: nailGallery },
-  feet: { title: "Pedicure — Pés", images: nailGallery }, // replace with feetGallery later
+  feet: { title: "Pedicure — Pés", images: nailGallery }, 
 };
 
 export default function Gallery() {
