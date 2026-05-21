@@ -17,7 +17,7 @@
   --padding-inline: 1.5rem;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 768px) {
   :root { --padding-inline: 2rem; }
 }
 

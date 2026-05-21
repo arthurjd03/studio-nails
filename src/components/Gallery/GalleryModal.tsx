@@ -21,7 +21,7 @@ export default function GalleryModal({
   images,
   onClose,
 }: GalleryModalProps) {
-  // close on ESC key
+ 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -30,7 +30,7 @@ export default function GalleryModal({
     return () => document.removeEventListener("keydown", handleKey);
   }, [onClose]);
 
-  // lock body scroll while modal is open
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {

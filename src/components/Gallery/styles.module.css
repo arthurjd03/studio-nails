@@ -166,14 +166,15 @@
 }
 
 .emblaSlide {
-  flex: 0 0 80%;
+  flex: 0 0 60%;
   min-width: 0;
   transition: all 0.4s ease;
 }
 
-.emblaSlide img {
+.slideImage {
   width: 100%;
   height: 260px;
+  
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
@@ -204,8 +205,8 @@
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: white;
-  color: #333;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -246,7 +247,7 @@
     flex: 0 0 65%;
   }
 
-  .emblaSlide img {
+  .slideImage {
     height: 320px;
   }
 }
@@ -257,7 +258,7 @@
     flex: 0 0 60%;
   }
 
-  .emblaSlide img {
+  .slideImage {
     height: 360px;
   }
 }

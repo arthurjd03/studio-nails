@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { nailGallery } from "@/constants";
+import { nailGallery, feetGallery } from "@/constants";
 import GalleryModal from "./GalleryModal";
 import styles from "./styles.module.css";
 import { Hand, Footprints, ArrowRight } from "lucide-react";
@@ -32,7 +32,7 @@ const galleryCards: GalleryCard[] = [
 
 const galleries = {
   nails: { title: "Manicure — Mãos", images: nailGallery },
-  feet: { title: "Pedicure — Pés", images: nailGallery }, 
+  feet: { title: "Pedicure — Pés", images: feetGallery },
 };
 
 export default function Gallery() {

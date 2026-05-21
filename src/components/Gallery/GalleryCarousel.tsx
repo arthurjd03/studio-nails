@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./styles.module.css";
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import NavigationArrows from "./NavigationArrows";
 import useEmblaCarousel from "embla-carousel-react";
@@ -22,7 +23,6 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
     duration: 20,
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const loopedImages = [...images, ...images, ...images];
 
   const onPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const onNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -38,7 +38,7 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
     <div className={styles.emblaWrapper}>
       <div className={styles.emblaViewport} ref={emblaRef}>
         <div className={styles.emblaContainer}>
-          {loopedImages.map((image, index) => (
+          {images.map((image, index) => (
             <div
               key={index}
               className={`${styles.emblaSlide} ${
@@ -47,7 +47,13 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
                   : styles.emblaSlideInactive
               }`}
             >
-              <img src={image.src} alt={image.alt} />
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={400}
+                height={533}
+                className={styles.slideImage}
+              />
             </div>
           ))}
         </div>
