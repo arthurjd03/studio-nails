@@ -35,7 +35,7 @@ export default function AboutMe() {
 
       <div className={styles.imageWrapper}>
         <Image
-          src="/images/logo/about.png"
+          src="/images/about/about.png"
           alt="Suellen fazendo unhas"
           width={200}
           height={400}

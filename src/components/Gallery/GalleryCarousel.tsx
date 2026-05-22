@@ -52,6 +52,7 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
                 alt={image.alt}
                 width={400}
                 height={533}
+                quality={80}
                 className={styles.slideImage}
               />
             </div>

@@ -12,7 +12,7 @@ export default function Hero() {
         <div className={`${styles.circle} ${styles.c5}`} />
         <div className={`${styles.circle} ${styles.c6}`} />
         <Image
-          src="/images/about/suellen.webp"
+          src="/images/professional/suellen.webp"
           alt="Profissional de manicure"
           width={300}
           height={410}
