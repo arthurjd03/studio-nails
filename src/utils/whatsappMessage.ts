@@ -1,7 +1,38 @@
-// Integração com WhatsApp
-/* <a
-            href="https://wa.me/5538998836488?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio."
-            target="_blank"
-          >
-            Agendar
-          </a> */
+import { Service } from "@/types/service";
+
+type OrderMessageParams = {
+  name: string;
+  phone: string;
+  payment: string;
+  notes: string;
+  services: Service[];
+  total: number;
+};
+
+export function buildWhatsAppMessage({
+  name,
+  phone,
+  payment,
+  notes,
+  services,
+  total,
+}: OrderMessageParams): string {
+  return `Olá! Gostaria de agendar um horário 😊
+
+*Nome:* ${name}
+*Telefone:* ${phone}
+*Pagamento:* ${payment}
+
+*Serviços escolhidos:*
+${services.map((s) => `• ${s.name} — R$ ${s.price},00`).join("\n")}
+
+*Total: R$ ${total},00*
+
+${notes ? `📝 *Observação:* ${notes}` : ""}
+
+Quais horários estão disponíveis?`;
+}
+
+export function buildWhatsAppUrl(phone: string, message: string): string {
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+}

@@ -19,5 +19,4 @@ export const nailGallery: GalleryImage[] = [
   { src: "/images/gallery/nails/nails-13.webp", alt: "Trabalho 4" },
   { src: "/images/gallery/nails/nails-14.webp", alt: "Trabalho 4" },
   { src: "/images/gallery/nails/nails-15.webp", alt: "Trabalho 4" },
-  { src: "/images/gallery/nails/nails-16.webp", alt: "Trabalho 4" },
 ];

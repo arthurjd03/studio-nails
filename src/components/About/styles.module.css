@@ -6,7 +6,7 @@
   padding: 3rem var(--padding-inline);
 }
 
-/* — Content — */
+
 .content {
   display: flex;
   flex-direction: column;
@@ -76,7 +76,7 @@
   transition: all 0.25s ease;
 }
 
-/* — Image — */
+
 .imageWrapper {
   position: relative;
   flex-shrink: 0;
@@ -103,7 +103,7 @@
   z-index: 2;
 }
 
-/* — Stats Card — */
+
 .statsCard {
   position: absolute;
   bottom: -20px;
@@ -151,7 +151,7 @@
   flex-shrink: 0;
 }
 
-/* — Mobile large — */
+
 @media (min-width: 480px) {
   .statsCard {
     right: -10px;
@@ -159,7 +159,7 @@
   }
 }
 
-/* — Tablet — */
+
 @media (min-width: 768px) {
   .container {
     flex-direction: row-reverse;
@@ -184,7 +184,7 @@
   }
 }
 
-/* — Tablet large — */
+
 @media (min-width: 1024px) {
   .statsCard {
     right: -60px;
@@ -192,7 +192,6 @@
   }
 }
 
-/* — Desktop — */
 @media (min-width: 1280px) {
   .container {
     padding: 4rem var(--padding-inline);

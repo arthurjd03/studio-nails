@@ -1,8 +1,9 @@
 "use client";
 
+import styles from "./styles.module.css";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
-import styles from "./styles.module.css";
+import { buildWhatsAppMessage, buildWhatsAppUrl } from "@/utils/whatsappMessage";
 import { X } from "lucide-react";
 
 export default function OrderSummary() {
@@ -22,24 +23,15 @@ export default function OrderSummary() {
   };
 
   const handleSendWhatsApp = () => {
-    const message = `Olá! Gostaria de agendar um horário 😊
-
-*Nome:* ${name}
-*Telefone:* ${phone}
-*Pagamento:* ${payment}
-
-*Serviços escolhidos:*
-${services.map((s) => `• ${s.name} — R$ ${s.price},00`).join("\n")}
-
-*Total: R$ ${total},00*
-
-${notes ? `📝 *Observação:* ${notes}` : ""}
-
-Quais horários estão disponíveis?`;
-
-    window.open(
-      `https://wa.me/+553898143836?text=${encodeURIComponent(message)}`,
-    );
+  const message = buildWhatsAppMessage({
+    name,
+    phone,
+    payment,
+    notes,
+    services,
+    total,
+  });
+  window.open(buildWhatsAppUrl("553898143836", message));
     clearCart();
     handleClose();
     setName("");
