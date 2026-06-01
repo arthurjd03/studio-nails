@@ -5,6 +5,7 @@ import { MessageCircle } from "lucide-react";
 export default function Menu() {
   return (
     <header className={styles.header}>
+
       <div className={styles.container}>
         <div className={styles.logo}>
           <em>Suellen</em> <span>Nails</span>

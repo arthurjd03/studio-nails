@@ -46,7 +46,7 @@ export default function AboutMe() {
           <div className={styles.stat}>
             <span className={styles.statValue}>
               <Calendar size={16} />
-              3+
+              10+
             </span>
             <span className={styles.statLabel}>anos de experiência</span>
           </div>

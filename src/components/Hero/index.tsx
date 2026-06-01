@@ -32,7 +32,7 @@ export default function Hero() {
         </p>
 
         <div className={styles.actions}>
-          <a href="#contato" className={styles.ctaPrimary}>
+          <a href="#contact" className={styles.ctaPrimary}>
             Agendar horário
           </a>
 
