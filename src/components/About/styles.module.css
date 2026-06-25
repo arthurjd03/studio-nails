@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  padding: 3rem var(--padding-inline);
+  padding: 0 var(--padding-inline);
 }
 
 
@@ -44,7 +44,7 @@
 
 .content h2 {
   font-family: var(--font-title);
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-size: clamp(1.8rem, 4vw,3rem);
   color: #1a1a1a;
   line-height: 1.3;
 }
@@ -173,6 +173,12 @@
     align-items: flex-start;
     text-align: left;
   }
+  .content p {
+    font-size: 1.3rem;
+  }
+  .label {
+    font-size: 1.2rem;
+  }
 
   .statsCard {
     right: -40px;
@@ -185,7 +191,7 @@
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .statsCard {
     right: -60px;
     padding: 18px 24px;

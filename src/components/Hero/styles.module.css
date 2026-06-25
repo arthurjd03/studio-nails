@@ -27,7 +27,11 @@
 .circle {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle,rgb(239, 51, 104) 28%, rgba(255, 98, 142, 0.56) 100%);
+  background: radial-gradient(
+    circle,
+    rgb(239, 51, 104) 28%,
+    rgba(255, 98, 142, 0.56) 100%
+  );
   animation: pulse 3s ease-in-out infinite;
 }
 
@@ -115,9 +119,9 @@
 }
 
 .content h1 {
-  font-size: clamp(2.7rem, 8vw, 3.5rem);
+  font-size: clamp(1.8rem, 4vw, 3rem);
   line-height: 1.2;
-  color: var(--color-text);
+  color: black;
 }
 
 .content h1 small {
@@ -204,9 +208,8 @@
     text-align: left;
     max-width: 480px;
   }
-
   .content p {
-    max-width: 380px;
+    font-size: 1.3rem;
   }
 
   .actions {

@@ -30,7 +30,7 @@ export default function PaymentMethods() {
       <small className={styles.label}>Pagamento</small>
       <h2 className={styles.title}>Formas de pagamento</h2>
       <p className={styles.subtitle}>
-        Escolha a forma que preferir no momento do atendimento
+        Escolha a forma que preferir no momento da escolha dos serviços.
       </p>
 
       <div className={styles.pills}>

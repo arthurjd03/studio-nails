@@ -235,12 +235,15 @@
 
 /* — Tablet — */
 @media (min-width: 768px) {
+  .label {
+    font-size: 1.2rem;
+  }
   .cards {
     max-width: 800px;
   }
 
   .cardImage {
-    height: 200px;
+    height: 280px;
   }
 
   .emblaSlide {
@@ -248,7 +251,7 @@
   }
 
   .slideImage {
-    height: 320px;
+    height: 500px;
   }
 }
 

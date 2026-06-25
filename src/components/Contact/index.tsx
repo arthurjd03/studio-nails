@@ -33,8 +33,8 @@ const contacts: Contact[] = [
   {
     icon: <Camera size={26} />,
     title: "Instagram",
-    sub: "@suellen.nails",
-    href: "https://instagram.com/suellen.nails",
+    sub: "@suellenj.damasceno",
+    href: "https://instagram.com/suellenj.damasceno",
   },
   {
     icon: <MapPin size={26} />,

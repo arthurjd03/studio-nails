@@ -54,7 +54,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding: 3rem 1.5rem;
+  padding: 0 1.5rem;
 }
 
 .label {
@@ -67,7 +67,7 @@
 
 .title {
   font-family: var(--font-title);
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
   color: #1a1a1a;
   text-align: center;
 }
@@ -109,6 +109,9 @@
 @media (min-width: 768px) {
   .list {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .label {
+    font-size: 1.2rem;
   }
 }
 
