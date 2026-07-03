@@ -1,10 +1,11 @@
 "use client";
 
-import styles from "./styles.module.css";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import NavigationArrows from "./NavigationArrows";
 import useEmblaCarousel from "embla-carousel-react";
+
+import NavigationArrows from "./NavigationArrows";
+import styles from "./styles.module.css";
 
 type GalleryImage = {
   src: string;
@@ -17,10 +18,10 @@ type GalleryCarouselProps = {
 
 export default function GalleryCarousel({ images }: GalleryCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
     dragFree: false,
     skipSnaps: false,
     duration: 20,
+    align: "center",
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
 

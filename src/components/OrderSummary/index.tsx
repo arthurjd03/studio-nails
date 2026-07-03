@@ -3,7 +3,10 @@
 import styles from "./styles.module.css";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
-import { buildWhatsAppMessage, buildWhatsAppUrl } from "@/utils/whatsappMessage";
+import {
+  buildWhatsAppMessage,
+  buildWhatsAppUrl,
+} from "@/utils/whatsappMessage";
 import { X } from "lucide-react";
 
 export default function OrderSummary() {
@@ -22,16 +25,17 @@ export default function OrderSummary() {
     setStep(1);
   };
 
-  const handleSendWhatsApp = () => {
-  const message = buildWhatsAppMessage({
-    name,
-    phone,
-    payment,
-    notes,
-    services,
-    total,
-  });
-  window.open(buildWhatsAppUrl("553898143836", message));
+  const handleSendWhatsApp = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const message = buildWhatsAppMessage({
+      name,
+      phone,
+      payment,
+      notes,
+      services,
+      total,
+    });
+    window.open(buildWhatsAppUrl("553898143836", message));
     clearCart();
     handleClose();
     setName("");
@@ -77,14 +81,18 @@ export default function OrderSummary() {
         )}
 
         {step === 2 && (
-          <div className={styles.form}>
+          <form className={styles.form} onSubmit={handleSendWhatsApp}>
             <input
+              type="text"
+              required
               className={styles.input}
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Seu nome completo"
             />
             <input
+              type="tel"
+              required
               className={styles.input}
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
@@ -94,23 +102,28 @@ export default function OrderSummary() {
               className={styles.select}
               value={payment}
               onChange={(e) => setPayment(e.target.value)}
+              required
             >
-              <option value="">Selecione o pagamento</option>
+              <option value="">Selecione a forma de pagamento</option>
               <option value="PIX">PIX</option>
               <option value="Cartão de débito">Cartão de débito</option>
               <option value="Cartão de crédito">Cartão de crédito</option>
               <option value="Dinheiro">Dinheiro</option>
             </select>
+
             <textarea
               className={styles.textarea}
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Observações (opcional)"
             />
-            <button className={styles.btnPrimary} onClick={handleSendWhatsApp}>
+
+            <button 
+            type="submit"
+            className={styles.btnPrimary}>
               Enviar no WhatsApp
             </button>
-          </div>
+          </form>
         )}
       </div>
     </div>
