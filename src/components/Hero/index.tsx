@@ -5,12 +5,15 @@ export default function Hero() {
   return (
     <section className={styles.container}>
       <div className={styles.image}>
-        <div className={`${styles.circle} ${styles.c1}`} />
-        <div className={`${styles.circle} ${styles.c2}`} />
-        <div className={`${styles.circle} ${styles.c3}`} />
-        <div className={`${styles.circle} ${styles.c4}`} />
-        <div className={`${styles.circle} ${styles.c5}`} />
-        <div className={`${styles.circle} ${styles.c6}`} />
+        {/* rings */}
+        <div className={styles.ring + " " + styles.r1} />
+        <div className={styles.ring + " " + styles.r2} />
+        <div className={styles.ring + " " + styles.r3} />
+        <div className={styles.ring + " " + styles.r4} />
+
+        {/* orbs */}
+        <div className={`${styles.glowOrb} ${styles.o1}`} />
+        <div className={`${styles.glowOrb} ${styles.o2}`} />
         <Image
           src="/images/professional/suellen.webp"
           alt="Profissional de manicure"
@@ -20,7 +23,7 @@ export default function Hero() {
           priority
         />
       </div>
-      <div className={styles.content}>
+      <div id="init" className={styles.content}>
         <h1>
           <small>Cuidado que</small> <span>realça sua</span>
           <em> beleza</em>

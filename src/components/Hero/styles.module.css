@@ -23,90 +23,92 @@
   border-radius: 12px;
 }
 
-/* — Circles — */
-.circle {
+/* — Image Wrapper — */
+.image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 280px;
+  height: 380px;
+}
+
+/* — Expanding Rings — */
+.ring {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgb(239, 51, 104) 28%,
-    rgba(255, 98, 142, 0.56) 100%
-  );
-  animation: pulse 3s ease-in-out infinite;
+  border: 1.5px solid rgba(229, 57, 106, 0.678);
+  animation: expandFade 3s ease-out infinite;
 }
 
-.c1 {
+.r1 { width: 200px; height: 200px; animation-delay: 0s; }
+.r2 { width: 260px; height: 260px; animation-delay: 1s; }
+.r3 { width: 320px; height: 320px; animation-delay: 2s; }
+.r4 { width: 380px; height: 380px; animation-delay: 3s; }
+
+@keyframes expandFade {
+  0%   { transform: scale(0.6); opacity: 0; }
+  20%  { opacity: 0.8; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+/* — Glow Orbs — */
+.glowOrb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(229, 57, 107, 0.18) 0%, transparent 70%);
+  animation: orbFloat 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.o1 {
   width: 180px;
   height: 180px;
-  bottom: 90px;
-  left: 55px;
-  opacity: 0.4;
-  animation: pulseCenter 3s ease-in-out infinite 0s;
-}
-
-.c2 {
-  width: 80px;
-  height: 80px;
   top: -20px;
-  right: -25px;
-  opacity: 0.6;
-  animation-delay: 0.5s;
-}
-
-.c3 {
-  width: 110px;
-  height: 110px;
-  bottom: 10px;
-  left: -40px;
-  opacity: 0.5;
-  animation-delay: 1s;
-}
-
-.c4 {
-  width: 65px;
-  height: 65px;
-  top: 45%;
   right: -30px;
-  opacity: 0.55;
-  animation-delay: 1.5s;
+  animation-delay: 0s;
 }
 
-.c5 {
-  width: 135px;
-  height: 135px;
-  top: 5px;
-  left: -45px;
-  opacity: 0.45;
-  animation-delay: 0.8s;
+.o2 {
+  width: 120px;
+  height: 120px;
+  bottom: 0px;
+  left: -20px;
+  animation-delay: 2s;
 }
 
-.c6 {
-  width: 80px;
-  height: 80px;
-  bottom: 30px;
-  right: -10px;
-  opacity: 0.4;
-  animation-delay: 1.3s;
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-12px) scale(1.08); }
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.15);
-  }
+/* — Shimmer Lines — */
+.shimmer {
+  position: absolute;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgb(230, 52, 103),
+    transparent
+  );
+  animation: shimmerFloat 5s ease-in-out infinite;
+  pointer-events: none;
 }
 
-@keyframes pulseCenter {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+@keyframes shimmerFloat {
+  0%, 100% { transform: translateY(0) scaleY(1);   opacity: 0.4; }
+  50%       { transform: translateY(-8px) scaleY(1.3); opacity: 0.9; }
+}
+
+/* — Photo — */
+.image img {
+  position: relative;
+  z-index: 2;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 /* — Content — */
@@ -183,14 +185,9 @@
 }
 
 /* — Mobile large — */
-@media (min-width: 480px) {
-  .c1 {
-    width: 200px;
-    height: 200px;
-  }
-  .c5 {
-    width: 150px;
-    height: 150px;
+@media (max-width: 768px) {
+  .image img {
+    border-radius: 50%;
   }
 }
 
@@ -236,19 +233,6 @@
 @media (min-width: 1024px) {
   .container {
     gap: 8rem;
-  }
-
-  .c1 {
-    width: 220px;
-    height: 220px;
-  }
-  .c3 {
-    width: 130px;
-    height: 130px;
-  }
-  .c5 {
-    width: 160px;
-    height: 160px;
   }
 }
 
