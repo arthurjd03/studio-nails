@@ -1,3 +1,27 @@
+/* — Scroll Reveal — */
+.label,
+.galleryTitle,
+.cards {
+  opacity: 0;
+}
+
+.gallerySection.visible .label {
+  animation: fadeDown 0.5s ease 0s forwards;
+}
+
+.gallerySection.visible .galleryTitle {
+  animation: fadeDown 0.5s ease 0.15s forwards;
+}
+
+.gallerySection.visible .cards {
+  animation: fadeDown 0.5s ease 0.3s forwards;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* — Section — */
 .gallerySection {
   display: flex;
@@ -17,7 +41,7 @@
 
 .galleryTitle {
   font-family: var(--font-title);
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
   color: var(--color-text);
   text-align: center;
 }
@@ -25,13 +49,13 @@
 /* — Cards — */
 .cards {
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column; /* empilhado no mobile */
+  gap: 1rem;
   width: 100%;
-  max-width: 700px;
 }
 
 .card {
-  flex: 1;
+  width: 100%;
   background: white;
   border-radius: 16px;
   overflow: hidden;
@@ -49,7 +73,7 @@
 
 .cardImage {
   width: 100%;
-  height: 160px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +88,7 @@
 }
 
 .cardContent {
-  padding: 1.2rem;
+  padding: 1rem 1.2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,7 +96,7 @@
 
 .cardTitle {
   font-family: var(--font-title);
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--color-text);
 }
 
@@ -101,7 +125,7 @@
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* bottom sheet no mobile */
   justify-content: center;
   z-index: 100;
   animation: fadeIn 0.25s ease;
@@ -109,11 +133,11 @@
 
 .modal {
   background: white;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0; /* bottom sheet no mobile */
   padding: 1.5rem;
-  width: 90%;
+  width: 100%;
   max-width: 650px;
-  animation: scaleIn 0.25s ease;
+  animation: slideUp 0.3s ease;
 }
 
 .modalHeader {
@@ -125,7 +149,7 @@
 
 .modalTitle {
   font-family: var(--font-title);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: var(--color-text);
 }
 
@@ -141,6 +165,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .closeBtn:hover {
@@ -161,19 +186,19 @@
 
 .emblaContainer {
   display: flex;
-  gap: 1.2rem;
+  gap: 0.8rem;
 }
 
 .emblaSlide {
-  flex: 0 0 60%;
+  flex: 0 0 80%; /* quase tela toda no mobile */
   min-width: 0;
   transition: all 0.4s ease;
 }
 
 .slideImage {
   width: 100%;
-  height: 260px;
-  
+  aspect-ratio: 3 / 4;
+  height: auto;
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
@@ -188,12 +213,12 @@
 .emblaSlideInactive {
   opacity: 0.35;
   filter: blur(2px);
-  transform: scale(0.9);
+  transform: scale(0.92);
 }
 
 /* — Arrows — */
 .arrows {
-  margin-top: 1.5rem;
+  margin-top: 1.2rem;
   display: flex;
   justify-content: center;
   gap: 0.8rem;
@@ -226,48 +251,93 @@
   to   { opacity: 1; }
 }
 
-@keyframes scaleIn {
-  from { transform: scale(0.95); opacity: 0; }
-  to   { transform: scale(1);    opacity: 1; }
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
 }
 
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
 
-/* — Tablet — */
-@media (min-width: 768px) {
-  .label {
-    font-size: 1.2rem;
-  }
+/* — Mobile large (480px) — */
+@media (min-width: 480px) {
   .cards {
-    max-width: 800px;
+    flex-direction: row; /* lado a lado a partir de 480px */
+    gap: 1.2rem;
   }
 
   .cardImage {
-    height: 280px;
+    height: 160px;
+  }
+
+  .emblaSlide {
+    flex: 0 0 75%;
+  }
+}
+
+/* — Tablet (768px) — */
+@media (min-width: 768px) {
+  .gallerySection {
+    padding: 4rem var(--padding-inline);
+    gap: 2rem;
+  }
+
+  .cards {
+    max-width: 700px;
+    gap: 1.5rem;
+  }
+
+  .cardImage {
+    height: 200px;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .modalOverlay {
+    align-items: center; /* centro na tela em tablet+ */
+  }
+
+  .modal {
+    border-radius: 20px;
+    width: 90%;
+    animation: scaleIn 0.25s ease;
   }
 
   .emblaSlide {
     flex: 0 0 65%;
   }
 
-  .slideImage {
-    height: 500px;
+  .emblaContainer {
+    gap: 1.2rem;
   }
 }
 
-/* — Tablet large — */
+/* — Tablet large (1024px) — */
 @media (min-width: 1024px) {
-  .emblaSlide {
-    flex: 0 0 60%;
+  .cards {
+    max-width: 800px;
   }
 
-  .slideImage {
-    height: 360px;
+  .cardImage {
+    height: 220px;
+  }
+
+  .emblaSlide {
+    flex: 0 0 55%;
   }
 }
 
-/* — Desktop — */
+/* — Desktop (1280px) — */
 @media (min-width: 1280px) {
   .gallerySection {
     padding: 4rem var(--padding-inline);
+  }
+
+  .emblaSlide {
+    flex: 0 0 50%;
   }
 }

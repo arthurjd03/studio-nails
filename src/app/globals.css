@@ -41,7 +41,6 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
   color: var(--color-text);
 }
-
 img, video {
   max-width: 100%;
 }

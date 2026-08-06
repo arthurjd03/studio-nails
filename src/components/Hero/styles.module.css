@@ -1,3 +1,4 @@
+/* — Container — */
 .container {
   display: flex;
   flex-direction: column-reverse;
@@ -7,23 +8,44 @@
   justify-content: flex-start;
 }
 
-/* — Image — */
+/* — Scroll reveal — */
+.container.visible .content {
+  animation: slideInLeft 0.7s ease forwards;
+}
+
+.container.visible .image {
+  animation: slideInRight 0.7s ease 0.2s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* estado inicial antes da animação */
+.content,
 .image {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  opacity: 0;
 }
 
-.image img {
-  position: relative;
-  z-index: 2;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* — Image Wrapper — */
+/* — Image — */
 .image {
   position: relative;
   display: flex;
@@ -34,30 +56,65 @@
   height: 380px;
 }
 
-/* — Expanding Rings — */
+.image img {
+  position: relative;
+  z-index: 2;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* — Rings — */
 .ring {
   position: absolute;
   border-radius: 50%;
-  border: 1.5px solid rgba(229, 57, 106, 0.678);
+  border: 1.5px solid rgba(229, 57, 106, 0.5);
   animation: expandFade 3s ease-out infinite;
 }
 
-.r1 { width: 200px; height: 200px; animation-delay: 0s; }
-.r2 { width: 260px; height: 260px; animation-delay: 1s; }
-.r3 { width: 320px; height: 320px; animation-delay: 2s; }
-.r4 { width: 380px; height: 380px; animation-delay: 3s; }
+.r1 {
+  width: 200px;
+  height: 200px;
+  animation-delay: 0s;
+}
+.r2 {
+  width: 260px;
+  height: 260px;
+  animation-delay: 1s;
+}
+.r3 {
+  width: 320px;
+  height: 320px;
+  animation-delay: 2s;
+}
+.r4 {
+  width: 380px;
+  height: 380px;
+  animation-delay: 3s;
+}
 
 @keyframes expandFade {
-  0%   { transform: scale(0.6); opacity: 0; }
-  20%  { opacity: 0.8; }
-  100% { transform: scale(1.2); opacity: 0; }
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
 }
 
 /* — Glow Orbs — */
 .glowOrb {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(229, 57, 107, 0.18) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(229, 57, 107, 0.18) 0%,
+    transparent 70%
+  );
   animation: orbFloat 6s ease-in-out infinite;
   pointer-events: none;
 }
@@ -69,18 +126,22 @@
   right: -30px;
   animation-delay: 0s;
 }
-
 .o2 {
   width: 120px;
   height: 120px;
-  bottom: 0px;
+  bottom: 0;
   left: -20px;
   animation-delay: 2s;
 }
 
 @keyframes orbFloat {
-  0%, 100% { transform: translateY(0px) scale(1); }
-  50%       { transform: translateY(-12px) scale(1.08); }
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.08);
+  }
 }
 
 /* — Shimmer Lines — */
@@ -98,17 +159,41 @@
   pointer-events: none;
 }
 
-@keyframes shimmerFloat {
-  0%, 100% { transform: translateY(0) scaleY(1);   opacity: 0.4; }
-  50%       { transform: translateY(-8px) scaleY(1.3); opacity: 0.9; }
+.s1 {
+  height: 40px;
+  top: 30px;
+  left: 20px;
+  animation-delay: 0s;
+}
+.s2 {
+  height: 25px;
+  top: 60px;
+  right: 15px;
+  animation-delay: 1.2s;
+}
+.s3 {
+  height: 35px;
+  bottom: 40px;
+  left: 10px;
+  animation-delay: 2.4s;
+}
+.s4 {
+  height: 20px;
+  bottom: 20px;
+  right: 25px;
+  animation-delay: 0.8s;
 }
 
-/* — Photo — */
-.image img {
-  position: relative;
-  z-index: 2;
-  object-fit: cover;
-  border-radius: 12px;
+@keyframes shimmerFloat {
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-8px) scaleY(1.3);
+    opacity: 0.9;
+  }
 }
 
 /* — Content — */
@@ -121,9 +206,9 @@
 }
 
 .content h1 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.8rem, 6vw, 3rem);
   line-height: 1.2;
-  color: black;
+  color: var(--color-text);
 }
 
 .content h1 small {
@@ -184,8 +269,8 @@
   color: var(--color-primary);
 }
 
-/* — Mobile large — */
-@media (max-width: 768px) {
+/* — Mobile — */
+@media (max-width: 767px) {
   .image img {
     border-radius: 50%;
   }
@@ -205,8 +290,10 @@
     text-align: left;
     max-width: 480px;
   }
+
   .content p {
-    font-size: 1.3rem;
+    font-size: 1rem;
+    max-width: 380px;
   }
 
   .actions {
