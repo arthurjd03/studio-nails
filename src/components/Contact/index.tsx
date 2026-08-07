@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { MessageCircle, Camera, MapPin, Clock } from "lucide-react";
 import styles from "./styles.module.css";
 
@@ -45,8 +48,25 @@ const contacts: Contact[] = [
 ];
 
 export default function ContactMe() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.visible);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 },
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="contact" className={styles.container}>
+    <section ref={sectionRef} id="contact" className={styles.container}>
       <small className={styles.label}>Contato</small>
       <h2 className={styles.title}>Onde me encontrar</h2>
 

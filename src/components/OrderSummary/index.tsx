@@ -1,6 +1,5 @@
 "use client";
 
-import styles from "./styles.module.css";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import {
@@ -8,6 +7,7 @@ import {
   buildWhatsAppUrl,
 } from "@/utils/whatsappMessage";
 import { X } from "lucide-react";
+import styles from "./styles.module.css";
 
 export default function OrderSummary() {
   const { services, clearCart, isOpen, closeModal } = useCart();
@@ -23,10 +23,14 @@ export default function OrderSummary() {
   const handleClose = () => {
     closeModal();
     setStep(1);
+    setName("");
+    setPhone("");
+    setPayment("");
+    setNotes("");
   };
 
-  const handleSendWhatsApp = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleSendWhatsApp = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const message = buildWhatsAppMessage({
       name,
       phone,
@@ -38,10 +42,6 @@ export default function OrderSummary() {
     window.open(buildWhatsAppUrl("553898143836", message));
     clearCart();
     handleClose();
-    setName("");
-    setPhone("");
-    setPayment("");
-    setNotes("");
   };
 
   if (!isOpen) return null;
@@ -53,7 +53,11 @@ export default function OrderSummary() {
           <span className={styles.modalTitle}>
             {step === 1 ? "Seu pedido" : "Seus dados"}
           </span>
-          <button className={styles.closeBtn} onClick={handleClose}>
+          <button
+            className={styles.closeBtn}
+            onClick={handleClose}
+            aria-label="Fechar"
+          >
             <X size={18} />
           </button>
         </div>
@@ -99,10 +103,10 @@ export default function OrderSummary() {
               placeholder="Seu telefone"
             />
             <select
+              required
               className={styles.select}
               value={payment}
               onChange={(e) => setPayment(e.target.value)}
-              required
             >
               <option value="">Selecione a forma de pagamento</option>
               <option value="PIX">PIX</option>
@@ -110,17 +114,13 @@ export default function OrderSummary() {
               <option value="Cartão de crédito">Cartão de crédito</option>
               <option value="Dinheiro">Dinheiro</option>
             </select>
-
             <textarea
               className={styles.textarea}
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Observações (opcional)"
             />
-
-            <button 
-            type="submit"
-            className={styles.btnPrimary}>
+            <button type="submit" className={styles.btnPrimary}>
               Enviar no WhatsApp
             </button>
           </form>

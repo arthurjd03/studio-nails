@@ -1,3 +1,38 @@
+/* — Scroll Reveal — */
+.label,
+.title,
+.cards,
+.hours {
+  opacity: 0;
+}
+
+.container.visible .label {
+  animation: fadeUp 0.5s ease 0s forwards;
+}
+
+.container.visible .title {
+  animation: fadeUp 0.5s ease 0.1s forwards;
+}
+
+.container.visible .cards {
+  animation: fadeUp 0.5s ease 0.2s forwards;
+}
+
+.container.visible .hours {
+  animation: slideInRight 0.6s ease 0.35s forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* — Section — */
 .container {
   display: flex;
   flex-direction: column;
@@ -17,7 +52,7 @@
 .title {
   font-family: var(--font-title);
   font-size: clamp(1.8rem, 4vw, 2.4rem);
-  color: black;
+  color: var(--color-text);
   text-align: center;
 }
 
@@ -67,6 +102,12 @@ a.card:hover {
   align-items: center;
   justify-content: center;
   color: var(--color-primary);
+  transition: all 0.25s ease;
+}
+
+a.card:hover .icon {
+  background: var(--color-primary);
+  color: white;
 }
 
 .cardTitle {
@@ -130,16 +171,13 @@ a.card:hover {
   font-weight: 400;
 }
 
-
 /* — Tablet — */
 @media (min-width: 768px) {
   .container {
     padding: 4rem var(--padding-inline);
     gap: 2.5rem;
   }
-  .label {
-    font-size: 1.2rem;
-  }
+
   .hours {
     padding: 2rem 2.5rem;
   }
@@ -155,4 +193,3 @@ a.card:hover {
     max-width: 900px;
   }
 }
-

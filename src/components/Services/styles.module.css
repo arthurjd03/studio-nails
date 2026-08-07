@@ -1,5 +1,44 @@
-/* Css ServiceCard */
+/* — Scroll Reveal — */
+.label,
+.title {
+  opacity: 0;
+}
 
+.list li {
+  opacity: 0;
+}
+
+.btnCreate {
+  opacity: 0;
+}
+
+.services.visible .label {
+  animation: fadeDown 0.5s ease 0s forwards;
+}
+
+.services.visible .title {
+  animation: fadeDown 0.5s ease 0.1s forwards;
+}
+
+.services.visible .list li {
+  animation: fadeUp 0.4s ease var(--delay, 0s) forwards;
+}
+
+.services.visible .btnCreate {
+  animation: fadeUp 0.5s ease 0.5s forwards;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* — ServiceCard — */
 .card {
   display: flex;
   align-items: center;
@@ -14,12 +53,12 @@
 }
 
 .card:hover {
-  border-color: #e5396b;
+  border-color: var(--color-primary);
   box-shadow: 0 8px 24px rgba(229, 57, 107, 0.12);
 }
 
 .cardSelected {
-  border-color: #e5396b;
+  border-color: var(--color-primary);
   background: #fff5f8;
 }
 
@@ -32,59 +71,61 @@
 .name {
   font-family: var(--font-title);
   font-size: 1rem;
-  color: #1a1a1a;
+  color: var(--color-text);
 }
 
 .price {
   font-size: 0.95rem;
-  color: #e5396b;
+  color: var(--color-primary);
   font-weight: 600;
 }
 
 .checkbox {
   width: 22px;
   height: 22px;
-  accent-color: #e5396b;
+  accent-color: var(--color-primary);
   cursor: pointer;
+  flex-shrink: 0;
 }
 
-/* Css index */
+/* — Services — */
 .services {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding: 0 1.5rem;
+  padding: 3rem var(--padding-inline);
 }
 
 .label {
   font-size: 0.72rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #e5396b;
+  color: var(--color-primary);
   font-weight: 600;
 }
 
 .title {
   font-family: var(--font-title);
   font-size: clamp(1.6rem, 4vw, 2.4rem);
-  color: #1a1a1a;
+  color: var(--color-text);
   text-align: center;
 }
 
 .list {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
   width: 100%;
   max-width: 700px;
   list-style: none;
   padding: 0;
 }
-/* Button Create */
+
+/* — Button — */
 .btnCreate {
   padding: 14px 32px;
-  background: #e5396b;
+  background: var(--color-primary);
   color: white;
   border: none;
   border-radius: 12px;
@@ -103,20 +144,24 @@
 
 .btnCreate:not(:disabled):hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px #e5396a3f;
+  box-shadow: 0 8px 20px rgba(229, 57, 107, 0.25);
 }
 
+/* — Tablet — */
 @media (min-width: 768px) {
   .list {
-    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-  .label {
-    font-size: 1.2rem;
+
+  .list li {
+    flex: 1 1 calc(50% - 0.5rem);
   }
 }
 
-@media (min-width: 1280px) {
-  .list {
-    grid-template-columns: repeat(1, 1fr);
+/* — Desktop — */
+@media (min-width: 1024px) {
+  .list li {
+    flex: 1 1 calc(33.333% - 0.7rem);
   }
 }
