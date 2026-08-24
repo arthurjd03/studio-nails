@@ -69,12 +69,6 @@
   white-space: nowrap;
 }
 
-/* — Divider entre nav e cta — */
-.divider {
-  width: 1px;
-  height: 20px;
-  background: rgba(229, 57, 107, 0.2);
-}
 
 /* — Tablet — */
 @media (min-width: 768px) {
@@ -132,6 +126,6 @@
   }
 
   .nav a {
-    font-size: 0.95rem;
+    font-size: 1.6rem;
   }
 }

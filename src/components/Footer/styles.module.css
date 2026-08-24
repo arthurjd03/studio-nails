@@ -1,7 +1,6 @@
 .footer {
   background: #2d1a24;
   padding: .1rem;
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
 }

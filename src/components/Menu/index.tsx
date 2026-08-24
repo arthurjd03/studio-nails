@@ -16,7 +16,6 @@ export default function Menu() {
           <a href="#aboutme">Sobre mim</a>
           <a href="#gallery">Galeria</a>
           <a href="#contact">Contato</a>
-          <div className={styles.divider}/>
         </nav>
 
         <a

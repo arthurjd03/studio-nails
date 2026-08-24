@@ -70,7 +70,7 @@
   align-items: center;
 
   gap: 1rem;
-  margin: 0 var(--padding-inline);
+  margin: .5rem 2rem;
   box-shadow:
     0 20px 60px rgba(40, 20, 30, 0.06),
     0 4px 16px rgba(229, 57, 107, 0.04);
@@ -204,7 +204,7 @@
 @media (min-width: 768px) {
   .container {
     padding: 3.5rem 4rem;
-    margin: 0 4rem;
+    margin: .5rem 4rem;
   }
 
   .pills {
