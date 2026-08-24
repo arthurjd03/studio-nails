@@ -187,7 +187,7 @@
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    padding: 4rem var(--padding-inline);
+    padding: 2rem var(--padding-inline);
     gap: 5rem;
   }
 
@@ -204,7 +204,7 @@
   }
 
   .statsCard {
-    right: -40px;
+    right: -50px;
   }
 
   .cta:hover {
@@ -216,6 +216,6 @@
 
 @media (min-width: 1280px) {
   .container {
-    padding: 4rem var(--padding-inline);
+    padding: 2rem var(--padding-inline);
   }
 }

@@ -190,7 +190,7 @@
 }
 
 .emblaSlide {
-  flex: 0 0 80%; /* quase tela toda no mobile */
+  flex: 0 0 60%; /* tela no mobile */
   min-width: 0;
   transition: all 0.4s ease;
 }
@@ -280,16 +280,16 @@
 /* — Tablet (768px) — */
 @media (min-width: 768px) {
   .gallerySection {
-    padding: 4rem var(--padding-inline);
     gap: 2rem;
   }
 
   .cards {
-    max-width: 700px;
+    max-width: 800px;
     gap: 1.5rem;
   }
 
   .cardImage {
+    width: 300px;
     height: 200px;
   }
 
@@ -323,7 +323,8 @@
   }
 
   .cardImage {
-    height: 220px;
+    width: 400px;
+    height: 200px;
   }
 
   .emblaSlide {

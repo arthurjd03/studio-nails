@@ -22,7 +22,7 @@
 }
 
 @media (min-width: 768px) {
-  :root { --padding-inline: 4rem; }
+  :root { --padding-inline: 2rem; }
 }
 
 @media (min-width: 1024px) {
@@ -37,9 +37,7 @@ html,
 body {
   max-width: 100%;
   scroll-behavior: smooth;
-  background: linear-gradient(90deg,rgba(253, 233, 214, 1) 36%, rgba(254, 200, 200, 1) 83%);
   font-family: system-ui, -apple-system, sans-serif;
-  color: var(--color-text);
 }
 img, video {
   max-width: 100%;

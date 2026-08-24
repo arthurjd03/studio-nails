@@ -20,8 +20,8 @@ export default function HomePage() {
         <Services />
         <ContactMe />
         <PaymentMethods />
-      </Container>
         <Footer/>
+      </Container>
         <OrderSummary />
     </>
   );

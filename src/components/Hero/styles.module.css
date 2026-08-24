@@ -282,7 +282,7 @@
     flex-direction: row-reverse;
     justify-content: center;
     gap: 6rem;
-    padding: 3rem var(--padding-inline);
+    padding: 2rem var(--padding-inline);
   }
 
   .content {

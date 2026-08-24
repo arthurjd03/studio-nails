@@ -108,7 +108,7 @@ export default function OrderSummary() {
               value={payment}
               onChange={(e) => setPayment(e.target.value)}
             >
-              <option value="">Selecione a forma de pagamento</option>
+              <option value="" disabled hidden>Selecione a forma de pagamento</option>
               <option value="PIX">PIX</option>
               <option value="Cartão de débito">Cartão de débito</option>
               <option value="Cartão de crédito">Cartão de crédito</option>
