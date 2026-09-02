@@ -104,7 +104,7 @@
 
 .label {
   position: relative;
-  font-size: 0.72rem;
+  font-size: 1.2rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--color-primary);
@@ -206,6 +206,9 @@
   .container {
     margin-bottom: .4rem;
   }
+  .label {
+    font-size: 1.6rem;
+  }
 }
 /* — Tablet — */
 
@@ -215,6 +218,9 @@
     max-width: 900px;
     padding: 3.5rem 4rem;
     margin-bottom: .7rem;
+  }
+  .label {
+    font-size: 1.8rem;
   }
 
   .pills {

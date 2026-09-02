@@ -32,7 +32,7 @@
 }
 
 .label {
-  font-size: 0.72rem;
+  font-size: 1.2rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--color-primary);
@@ -275,6 +275,9 @@
   .emblaSlide {
     flex: 0 0 75%;
   }
+  .label {
+    font-size: 1.6rem;
+  }
 }
 
 /* — Tablet (768px) — */
@@ -282,7 +285,9 @@
   .gallerySection {
     gap: 2rem;
   }
-
+  .label {
+    font-size: 1.8rem;
+  }
   .cards {
     max-width: 800px;
     gap: 1.5rem;

@@ -42,7 +42,7 @@
 }
 
 .label {
-  font-size: 0.72rem;
+  font-size: 1.2rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--color-primary);
@@ -175,11 +175,13 @@ a.card:hover .icon {
 @media (min-width: 768px) {
   .container {
     padding: 4rem var(--padding-inline);
-    gap: 2.5rem;
   }
 
   .hours {
     padding: 2rem 2.5rem;
+  }
+  .label {
+  font-size: 1.6rem;
   }
 }
 
@@ -191,5 +193,8 @@ a.card:hover .icon {
 
   .hours {
     max-width: 900px;
+  }
+  .label {
+  font-size: 1.8rem;
   }
 }
