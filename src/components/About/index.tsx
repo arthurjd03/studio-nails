@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Heart, Calendar, Star, Users } from "lucide-react";
 import styles from "./styles.module.css";
+import Bear from "../Bear/Bear";
 
 export default function AboutMe() {
   const containerRef = useRef<HTMLElement>(null);
@@ -52,6 +53,7 @@ export default function AboutMe() {
           <a href="#contato" className={styles.cta}>
             Me conhecer melhor
           </a>
+          <Bear/>
         </div>
 
         <div className={styles.imageWrapper}>
