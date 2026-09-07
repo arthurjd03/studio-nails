@@ -3,10 +3,11 @@
 import { useEffect, useRef } from "react";
 import { MessageCircle, Camera, MapPin, Clock } from "lucide-react";
 import styles from "./styles.module.css";
+import { INSTAGRAM_URL } from "@/data/site";
 
 type Hour = {
   day: string;
-  time: string;
+  hours: string;
 };
 
 type Contact = {
@@ -17,13 +18,9 @@ type Contact = {
 };
 
 const hours: Hour[] = [
-  { day: "Terça", time: "8h — 18h" },
-  { day: "Quarta", time: "8h — 18h" },
-  { day: "Quinta", time: "8h — 18h" },
-  { day: "Sexta", time: "8h — 18h" },
-  { day: "Sábado", time: "8h — 18h" },
-  { day: "Segunda", time: "Fechado" },
-  { day: "Domingo", time: "Fechado" },
+  { day: "Terça a Sábado", hours: "8h — 18h" },
+  { day: "Segunda", hours: "Fechado" },
+  { day: "Domingo", hours: "Fechado" },
 ];
 
 const contacts: Contact[] = [
@@ -37,12 +34,12 @@ const contacts: Contact[] = [
     icon: <Camera size={26} />,
     title: "Instagram",
     sub: "@suellenj.damasceno",
-    href: "https://instagram.com/suellenj.damasceno",
+    href: INSTAGRAM_URL,
   },
   {
     icon: <MapPin size={26} />,
     title: "Local de atendimento",
-    sub: "A domicílio — Paracatu, MG",
+    sub: "Paracatu, MG",
     href: null,
   },
 ];
@@ -104,9 +101,9 @@ export default function ContactMe() {
             <div key={h.day} className={styles.hourRow}>
               <span className={styles.hourDay}>{h.day}</span>
               <span
-                className={`${styles.hourTime} ${h.time === "Fechado" ? styles.closed : ""}`}
+                className={`${styles.hourTime} ${h.hours === "Fechado" ? styles.closed : ""}`}
               >
-                {h.time}
+                {h.hours}
               </span>
             </div>
           ))}

@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 import ServiceCard from "./ServiceCard";
 import { nailServices } from "@/constants";
 import { useCart } from "@/context/CartContext";
+import { ShoppingBag } from "lucide-react";
 
 export default function Services() {
   const { addService, removeService, hasService, openModal, services } =
@@ -28,8 +29,14 @@ export default function Services() {
 
   return (
     <section ref={sectionRef} id="services" className={styles.services}>
-      <small className={styles.label}>Serviços e Valores</small>
-      <h2 className={styles.title}>Escolha o seu cuidado</h2>
+      <div className={styles.header}>
+        <span className={styles.eyebrow}>Serviços</span>
+        <h2 className={styles.title}>Monte o seu atendimento</h2>
+        <p className={styles.subtitle}>
+          Selecione os serviços desejados e envie seu pedido em segundos pelo
+          WhatsApp.
+        </p>
+      </div>
       <ul className={styles.list}>
         {nailServices.map((service, index) => (
           <li
@@ -48,13 +55,23 @@ export default function Services() {
           </li>
         ))}
       </ul>
-      <button
-        className={styles.btnCreate}
-        onClick={openModal}
-        disabled={services.length === 0}
-      >
-        Criar pedido
-      </button>
+      <div className={styles.footer}>
+        <button
+          type="button"
+          className={styles.orderBtn}
+          disabled={services.length === 0}
+          onClick={openModal}
+        >
+          <ShoppingBag size={18} aria-hidden="true" />
+          Criar pedido
+          {services.length > 0 ? ` (${services.length})` : ""}
+        </button>
+        <span className={styles.hint}>
+          {services.length === 0
+            ? "Selecione ao menos um serviço para continuar"
+            : "Você revisa tudo antes de enviar"}
+        </span>
+      </div>
     </section>
   );
 }

@@ -28,24 +28,33 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  padding: 3rem var(--padding-inline);
+  padding: 2rem;
 }
-
-.label {
-  font-size: 1.2rem;
-  letter-spacing: 3px;
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+}
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--color-primary);
-  font-weight: 600;
-}
-
-.galleryTitle {
-  font-family: var(--font-title);
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
   color: var(--color-text);
-  text-align: center;
 }
 
+.title {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  color: var(--color-text-muted);
+}
+.subtitle {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
 /* — Cards — */
 .cards {
   display: flex;

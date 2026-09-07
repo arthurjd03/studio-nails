@@ -97,21 +97,35 @@
   padding: 3rem var(--padding-inline);
 }
 
-.label {
-  font-size: 1.2rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  font-weight: 600;
-}
 
-.title {
-  font-family: var(--font-title);
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  color: var(--color-text);
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
   text-align: center;
 }
 
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.title {
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  color: var(--color-text-muted);
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: 34rem;
+  line-height: 1.7;
+}
 .list {
   display: flex;
   flex-direction: column;
@@ -122,31 +136,45 @@
   padding: 0;
 }
 
-/* — Button — */
-.btnCreate {
-  padding: 14px 32px;
-  background: var(--color-primary);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  margin-top: 1rem;
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
 }
 
-.btnCreate:disabled {
-  background: #f5b8cb;
+.orderBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.7rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(120deg, var(--color-primary), var(--color-primary-light));
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 14px 30px -14px var(--color-primary-dark);
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.orderBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.orderBtn:disabled {
   cursor: not-allowed;
-  transform: none;
+  opacity: 0.45;
   box-shadow: none;
 }
 
-.btnCreate:not(:disabled):hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(229, 57, 107, 0.25);
+.hint {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
 }
-
 /* — Tablet — */
 @media (min-width: 768px) {
   .label {

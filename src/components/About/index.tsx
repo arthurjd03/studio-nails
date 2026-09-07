@@ -2,13 +2,18 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { Heart, Calendar, Star, Users } from "lucide-react";
+import { Heart, Calendar, Star, Users, Check } from "lucide-react";
 import styles from "./styles.module.css";
-import Bear from "../Bear/Bear";
 
 export default function AboutMe() {
   const containerRef = useRef<HTMLElement>(null);
 
+  const highlights = [
+    "Materiais esterilizados a cada atendimento",
+    "Atendimento individual e com hora marcada",
+    "Produtos hipoalergênicos e de alta durabilidade",
+  ];
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -17,7 +22,7 @@ export default function AboutMe() {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
 
     if (containerRef.current) observer.observe(containerRef.current);
@@ -27,71 +32,54 @@ export default function AboutMe() {
   return (
     <section ref={containerRef} className={styles.container}>
       <section id="aboutme" className={styles.container}>
-        <div className={styles.content}>
-          <small className={styles.label}>Sobre mim</small>
+        <div className={styles.text}>
+          <span className={styles.eyebrow}>Sobre mim</span>
 
-          <h2>
-            Prazer, eu sou a sua <span>nail designer!</span>
+          <h2 className={styles.title}>
+            Cada unha é um detalhe da sua história
           </h2>
-
-          <div className={styles.dividerLine}>
-            <span className={styles.line} />
-            <Heart size={16} className={styles.heart} />
-            <span className={styles.line} />
-          </div>
-
-          <p>
+          <p className={styles.paragraph}>
             Profissional especializada em cuidados com unhas, oferecendo
             serviços de manicure e pedicure com atenção aos detalhes e produtos
             de qualidade.
           </p>
-          <p>
+          <p className={styles.paragraph}>
             Atendimento personalizado para garantir conforto, beleza e
             autoestima para cada cliente.
           </p>
-
-          <a href="#contato" className={styles.cta}>
-            Me conhecer melhor
-          </a>
-          <Bear/>
+          <ul className={styles.list}>
+            {highlights.map((item) => (
+              <li key={item} className={styles.listItem}>
+                <Check size={18} aria-hidden="true" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className={styles.imageWrapper}>
-          <Image
-            src="/images/about/about.png"
-            alt="Suellen fazendo unhas"
-            width={200}
-            height={400}
-            className={styles.image}
-          />
+        <div className={styles.media}>
+          <div className={styles.imageWrap}>
+            <Image
+              className={styles.image}
+              src="/about/about.jpg"
+              alt="Suellen aplicando esmalte nas unhas de uma cliente"
+              loading="lazy"
+              width={1024}
+              height={1280}
+            />
+            <span className={styles.heart} aria-hidden="true">
+              <Heart size={22} fill="currentColor" />
+            </span>
+          </div>
 
-          <div className={styles.statsCard}>
+          <div className={styles.stats}>
             <div className={styles.stat}>
-              <span className={styles.statValue}>
-                <Calendar size={16} />
-                10+
-              </span>
+              <span className={styles.statValue}>10+</span>
               <span className={styles.statLabel}>anos de experiência</span>
             </div>
-
-            <div className={styles.statDivider} />
-
             <div className={styles.stat}>
-              <span className={styles.statValue}>
-                <Users size={16} />
-                200+
-              </span>
+              <span className={styles.statValue}>400+</span>
               <span className={styles.statLabel}>clientes atendidas</span>
-            </div>
-
-            <div className={styles.statDivider} />
-
-            <div className={styles.stat}>
-              <span className={styles.statValue}>
-                <Star size={16} fill="currentColor" />
-                5.0
-              </span>
-              <span className={styles.statLabel}>avaliação média</span>
             </div>
           </div>
         </div>

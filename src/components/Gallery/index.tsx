@@ -31,8 +31,8 @@ const galleryCards: GalleryCard[] = [
 ];
 
 const galleries = {
-  nails: { title: "Manicure — Mãos", images: nailGallery },
-  feet: { title: "Pedicure — Pés", images: feetGallery },
+  nails: { title: " Mãos", images: nailGallery },
+  feet: { title: " Pés", images: feetGallery },
 };
 
 export default function Gallery() {
@@ -47,7 +47,7 @@ export default function Gallery() {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -57,8 +57,14 @@ export default function Gallery() {
   return (
     <section ref={sectionRef} id="gallery" className={styles.gallerySection}>
       <section id="gallery" className={styles.gallerySection}>
-        <small className={styles.label}>Portfólio</small>
-        <h2 className={styles.galleryTitle}>Veja meu trabalho</h2>
+        <div className={styles.header}>
+          <span className={styles.eyebrow}>Galeria</span>
+          <h2 className={styles.title}>Trabalhos que falam por si</h2>
+          <p className={styles.subtitle}>
+            Escolha um álbum para ver de perto os acabamentos, formatos e cores
+            que mais fazem sucesso no estúdio.
+          </p>
+        </div>
 
         <div className={styles.cards}>
           {galleryCards.map((card) => (
@@ -73,7 +79,7 @@ export default function Gallery() {
               <div className={styles.cardContent}>
                 <div>
                   <p className={styles.cardTitle}>{card.title}</p>
-                  <p className={styles.cardSub}>Ver galeria</p>
+                  <p className={styles.cardSub}>Ver álbum</p>
                 </div>
                 <div className={styles.cardArrow}>
                   <ArrowRight size={16} />

@@ -19,6 +19,8 @@ export default function ServiceCard({
     >
       <div className={styles.info}>
         <h3 className={styles.name}>{service.name}</h3>
+        <p>{service.description}</p>
+        <p>Tempo estimado: {service.duration}</p>
         <span className={styles.price}>
           {service.price.toLocaleString("pt-BR", {
             style: "currency",

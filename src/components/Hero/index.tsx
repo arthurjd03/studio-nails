@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./styles.module.css";
+import { CalendarHeart, Images, Sparkles } from "lucide-react";
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
@@ -28,12 +29,6 @@ export default function Hero() {
     <section ref={containerRef} className={styles.container}>
       <section className={styles.container}>
         <div className={styles.image}>
-          {/* rings */}
-          <div className={styles.ring + " " + styles.r1} />
-          <div className={styles.ring + " " + styles.r2} />
-          <div className={styles.ring + " " + styles.r3} />
-          <div className={styles.ring + " " + styles.r4} />
-
           {/* orbs */}
           <div className={`${styles.glowOrb} ${styles.o1}`} />
           <div className={`${styles.glowOrb} ${styles.o2}`} />
@@ -47,23 +42,27 @@ export default function Hero() {
           />
         </div>
         <div id="init" className={styles.content}>
+          <span className={styles.eyebrow}>
+            <Sparkles size={14} aria-hidden="true" />
+            Nail designer em Paracatu-MG
+          </span>
           <h1>
-            <small>Cuidado que</small> <span>realça sua</span>
+            Cuidado que <em>realça </em>sua
             <em> beleza</em>
           </h1>
 
-          <p>
+          <p className={styles.text}>
             Serviços de manicure e pedicure com atenção aos detalhes, produtos
             de qualidade e um atendimento que faz você se sentir única.
           </p>
 
           <div className={styles.actions}>
-            <a href="#contact" className={styles.ctaPrimary}>
-              Agendar horário
+            <a href="#contact" className={styles.primaryBtn}>
+              <CalendarHeart size={18} aria-hidden="true" /> Agendar horário
             </a>
 
-            <a href="#services" className={styles.ctaSecondary}>
-              Ver serviços
+            <a href="#services" className={styles.ghostBtn}>
+              <Images size={18} aria-hidden="true" /> Ver serviços
             </a>
           </div>
         </div>
