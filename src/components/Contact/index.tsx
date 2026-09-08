@@ -1,112 +1,106 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { MessageCircle, Camera, MapPin, Clock } from "lucide-react";
+import { Camera, Clock, MapPin, MessageCircle } from "lucide-react";
+
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { businessHours, INSTAGRAM_URL, LOCATION, MAPS_URL } from "@/data/site";
+import { WHATSAPP_NUMBER } from "@/utils/whatsapp";
+
 import styles from "./styles.module.css";
-import { INSTAGRAM_URL } from "@/data/site";
 
-type Hour = {
-  day: string;
-  hours: string;
-};
-
-type Contact = {
+type ContactItem = {
   icon: React.ReactNode;
   title: string;
-  sub: string;
-  href: string | null;
+  value: string;
+  href?: string;
 };
 
-const hours: Hour[] = [
-  { day: "Terça a Sábado", hours: "8h — 18h" },
-  { day: "Segunda", hours: "Fechado" },
-  { day: "Domingo", hours: "Fechado" },
-];
+export default function Contact() {
+  const ref = useScrollReveal<HTMLElement>();
 
-const contacts: Contact[] = [
-  {
-    icon: <MessageCircle size={26} />,
-    title: "WhatsApp",
-    sub: "Agendar horário",
-    href: "https://wa.me/5538999999999",
-  },
-  {
-    icon: <Camera size={26} />,
-    title: "Instagram",
-    sub: "@suellenj.damasceno",
-    href: INSTAGRAM_URL,
-  },
-  {
-    icon: <MapPin size={26} />,
-    title: "Local de atendimento",
-    sub: "Paracatu, MG",
-    href: null,
-  },
-];
-
-export default function ContactMe() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(styles.visible);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.15 },
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+  const contacts: ContactItem[] = [
+    {
+      icon: <MessageCircle size={22} aria-hidden="true" />,
+      title: "WhatsApp",
+      value: "(11) 99876-5432",
+      href: `https://wa.me/${WHATSAPP_NUMBER}`,
+    },
+    {
+      icon: <Camera size={22} aria-hidden="true" />,
+      title: "Instagram",
+      value: "@suellennails",
+      href: INSTAGRAM_URL,
+    },
+    {
+      icon: <MapPin size={22} aria-hidden="true" />,
+      title: "Localização",
+      value: LOCATION,
+      href: MAPS_URL,
+    },
+  ];
 
   return (
-    <section ref={sectionRef} id="contact" className={styles.container}>
-      <small className={styles.label}>Contato</small>
-      <h2 className={styles.title}>Onde me encontrar</h2>
+    <section id="contact" ref={ref} className={styles.section}>
+      <div className={styles.header}>
+        <span className={styles.eyebrow}>Contato</span>
 
-      <div className={styles.cards}>
-        {contacts.map((contact) =>
-          contact.href ? (
-            <a
-              key={contact.title}
-              href={contact.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.card}
-            >
-              <div className={styles.icon}>{contact.icon}</div>
-              <span className={styles.cardTitle}>{contact.title}</span>
-              <span className={styles.cardSub}>{contact.sub}</span>
-            </a>
-          ) : (
-            <div key={contact.title} className={styles.card}>
-              <div className={styles.icon}>{contact.icon}</div>
-              <span className={styles.cardTitle}>{contact.title}</span>
-              <span className={styles.cardSub}>{contact.sub}</span>
-            </div>
-          ),
-        )}
+        <h2 className={styles.title}>Vamos marcar o seu horário</h2>
       </div>
 
-      <div className={styles.hours}>
-        <h3 className={styles.hoursTitle}>
-          <Clock size={18} />
-          Horário de atendimento
-        </h3>
-        <div className={styles.hoursList}>
-          {hours.map((h) => (
-            <div key={h.day} className={styles.hourRow}>
-              <span className={styles.hourDay}>{h.day}</span>
-              <span
-                className={`${styles.hourTime} ${h.hours === "Fechado" ? styles.closed : ""}`}
+      <div className={styles.body}>
+        <div className={styles.cards}>
+          {contacts.map((contact) => {
+            const content = (
+              <>
+                <span className={styles.icon}>{contact.icon}</span>
+
+                <span className={styles.cardText}>
+                  <span className={styles.cardTitle}>{contact.title}</span>
+
+                  <span className={styles.cardValue}>{contact.value}</span>
+                </span>
+              </>
+            );
+
+            return contact.href ? (
+              <a
+                key={contact.title}
+                href={contact.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.card}
               >
-                {h.hours}
-              </span>
-            </div>
-          ))}
+                {content}
+              </a>
+            ) : (
+              <div key={contact.title} className={styles.card}>
+                {content}
+              </div>
+            );
+          })}
+        </div>
+
+        <div className={styles.hours}>
+          <h3 className={styles.hoursTitle}>
+            <Clock size={18} aria-hidden="true" />
+            Horários de atendimento
+          </h3>
+
+          <div className={styles.hoursList}>
+            {businessHours.map((row) => (
+              <div key={row.day} className={styles.hoursRow}>
+                <span>{row.day}</span>
+
+                <span
+                  className={`${styles.hoursValue} ${
+                    row.hours === "Fechado" ? styles.closed : ""
+                  }`}
+                >
+                  {row.hours}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,201 +1,247 @@
-/* — Overlay — */
-.overlay {
+.backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(4px);
+  z-index: 100;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  z-index: 100;
+  background: rgba(45, 26, 36, 0.6);
+  backdrop-filter: blur(6px);
   animation: fadeIn 0.25s ease;
 }
 
-/* — Modal — */
 .modal {
-  background: white;
-  border-radius: 24px 24px 0 0;
-  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   width: 100%;
-  max-width: 600px;
-  position: relative;
-  animation: slideUp 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.45rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  animation: slideUp 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* — Header — */
-.modalHeader {
+.head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
 }
 
-.modalTitle {
-  font-family: var(--font-title);
+.title {
   font-size: 1.3rem;
-  color: var(--color-text);
+  font-family: var(--font-display);
 }
 
-.closeBtn {
-  width: 36px;
-  height: 36px;
-  background: var(--color-primary-light);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
+.step {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--color-primary);
-  display: flex;
+  font-weight: 700;
+}
+
+.close {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(229, 57, 107, 0.1);
+  color: var(--color-primary-dark);
+  cursor: pointer;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.9rem;
+  background: rgba(253, 233, 214, 0.55);
+}
+
+.itemName {
+  min-width: 0;
+  font-size: 0.92rem;
+}
+
+.itemRight {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   flex-shrink: 0;
 }
 
-.closeBtn:hover {
-  background: var(--color-primary);
-  color: white;
-}
-
-/* — Step 1 — */
-.serviceList {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-}
-
-.serviceItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  background: #fff5f8;
-  border-radius: 10px;
-}
-
-.serviceName {
-  font-size: 0.95rem;
-  color: var(--color-text);
-}
-
-.servicePrice {
-  font-size: 0.95rem;
-  color: var(--color-primary);
+.itemPrice {
   font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+.remove {
+  display: inline-flex;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
 }
 
 .total {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  border-top: 1px solid var(--color-primary-light);
-  margin-bottom: 1.5rem;
-}
-
-.totalLabel {
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(229, 57, 107, 0.35);
   font-size: 1.2rem;
-  color: var(--color-text);
 }
 
 .totalValue {
-  font-size: 1.2rem;
-  color: var(--color-primary);
   font-weight: 600;
+  color: var(--color-primary-dark);
 }
 
-/* — Step 2 — */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.85rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
 }
 
 .input,
 .select,
 .textarea {
   width: 100%;
-  padding: 12px 16px;
-  border: 1.5px solid #c8bfc2;
-  border-radius: 10px;
-  font-size: 0.95rem;
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid rgba(229, 57, 107, 0.25);
+  border-radius: 0.8rem;
+  background: #fff;
+  font: inherit;
+  font-size: 0.92rem;
   color: var(--color-text);
-  background: white;
-  outline: none;
-  transition: border 0.2s ease;
 }
 
 .input:focus,
 .select:focus,
 .textarea:focus {
+  outline: none;
   border-color: var(--color-primary);
 }
 
 .textarea {
-  resize: none;
-  height: 80px;
+  min-height: 5rem;
+  resize: vertical;
 }
 
-/* — Button — */
-.btnPrimary {
-  width: 100%;
-  padding: 14px;
-  background: var(--color-primary);
-  color: white;
-  border: none;
-  border-radius: 12px;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 1 1 10rem;
+  padding: 0.85rem 1.3rem;
+  border-radius: 50px;
+  font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
-.btnPrimary:hover {
+.primary {
+  border: none;
+  background: linear-gradient(120deg, var(--color-primary), var(--color-primary-light));
+  color: #fff;
+  box-shadow: 0 14px 30px -14px var(--color-primary-dark);
+}
+
+.secondary {
+  border: 1.5px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary-dark);
+}
+
+.primary:hover,
+.secondary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(229, 57, 107, 0.25);
 }
 
-/* — Animations — */
+.empty {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .backdrop {
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .modal {
+    max-width: 34rem;
+    border-radius: 1.5rem;
+    padding: 1.75rem;
+    animation: popIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { transform: translateY(100%); }
-  to   { transform: translateY(0); }
-}
-
-@keyframes scaleIn {
-  from { transform: scale(0.95); opacity: 0; }
-  to   { transform: scale(1);    opacity: 1; }
-}
-
-/* — Tablet — */
-@media (min-width: 768px) {
-  .overlay {
-    align-items: center;
+  from {
+    transform: translateY(100%);
   }
-
-  .modal {
-    border-radius: 24px;
-    padding: 2rem;
-    animation: scaleIn 0.25s ease;
+  to {
+    transform: translateY(0);
   }
 }
 
-/* — Desktop — */
-@media (min-width: 1024px) {
-  .modal {
-    max-width: 520px;
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
   }
-
-  .modalTitle {
-    font-size: 1.5rem;
-  }
-
-  .textarea {
-    height: 100px;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

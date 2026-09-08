@@ -2,12 +2,13 @@ import Menu from "@/components/Menu";
 import Container from "@/components/Container";
 import Hero from "@/components/Hero";
 import AboutMe from "@/components/About";
-import GallerySlide from "@/components/Gallery";
+import Gallery from "@/components/Gallery";
 import Services from "@/components/Services";
-import OrderSummary from "@/components/OrderSummary";
-import ContactMe from "@/components/Contact";
+import { OrderSummary } from "@/components/OrderSummary";
+import Contact from "@/components/Contact";
 import PaymentMethods from "@/components/PaymentMethods";
-import Footer from "@/components/Footer";
+import { Footer } from "@/components/Footer";
+
 
 export default function HomePage() {
   return (
@@ -16,13 +17,13 @@ export default function HomePage() {
       <Container>
         <Hero />
         <AboutMe />
-        <GallerySlide />
+        <Gallery />
         <Services />
-        <ContactMe />
+        <Contact />
         <PaymentMethods />
       </Container>
-        <Footer/>
-        <OrderSummary />
+      <Footer />
+      <OrderSummary />
     </>
   );
 }

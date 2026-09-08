@@ -1,102 +1,10 @@
-/* — Scroll Reveal — */
-.label,
-.title {
-  opacity: 0;
-}
-
-.list li {
-  opacity: 0;
-}
-
-.btnCreate {
-  opacity: 0;
-}
-
-.services.visible .label {
-  animation: fadeDown 0.5s ease 0s forwards;
-}
-
-.services.visible .title {
-  animation: fadeDown 0.5s ease 0.1s forwards;
-}
-
-.services.visible .list li {
-  animation: fadeUp 0.4s ease var(--delay, 0s) forwards;
-}
-
-.services.visible .btnCreate {
-  animation: fadeUp 0.5s ease 0.5s forwards;
-}
-
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* — ServiceCard — */
-.card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  border-radius: 16px;
-  padding: 1.2rem 1.5rem;
-  cursor: pointer;
-  border: 2px solid transparent;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  transition: all 0.25s ease;
-}
-
-.card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 8px 24px rgba(229, 57, 107, 0.12);
-}
-
-.cardSelected {
-  border-color: var(--color-primary);
-  background: #fff5f8;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.name {
-  font-family: var(--font-title);
-  font-size: 1rem;
-  color: var(--color-text);
-}
-
-.price {
-  font-size: 0.95rem;
-  color: var(--color-primary);
-  font-weight: 600;
-}
-
-.checkbox {
-  width: 22px;
-  height: 22px;
-  accent-color: var(--color-primary);
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-/* — Services — */
-.services {
+.section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 3rem var(--padding-inline);
+  gap: 2rem;
+  padding: .5rem var(--padding-inline);
 }
-
 
 .header {
   display: flex;
@@ -112,28 +20,120 @@
   text-transform: uppercase;
   color: var(--color-primary);
   font-weight: 700;
-  color: var(--color-text);
 }
 
 .title {
   font-size: clamp(1.8rem, 6vw, 2.5rem);
-  color: var(--color-text-muted);
+  font-family: var(--font-display);
+  color: var(--color-text);
 }
 
 .subtitle {
   color: var(--color-text-muted);
-  margin: 0;
   max-width: 34rem;
   line-height: 1.7;
 }
+
 .list {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   width: 100%;
-  max-width: 700px;
-  list-style: none;
-  padding: 0;
+  max-width: 70rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  flex: 1 1 100%;
+  padding: 1.15rem 1.25rem;
+  border: 1.5px solid transparent;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-soft);
+  text-align: left;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.section:global(.visible) .card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.selected {
+  border-color: var(--color-primary);
+  background: #fff;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1.5px solid var(--color-primary);
+  border-radius: 0.55rem;
+  color: transparent;
+  background: transparent;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.selected .checkbox {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-primary-dark);
+}
+
+.duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
 }
 
 .footer {
@@ -175,27 +175,24 @@
   font-size: 0.82rem;
   color: var(--color-text-muted);
 }
-/* — Tablet — */
-@media (min-width: 768px) {
-  .label {
-  font-size: 1.6rem;
-  }
-  .list {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
 
-  .list li {
-    flex: 1 1 calc(50% - 0.5rem);
+@media (min-width: 480px) {
+  .card {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 0.5rem);
   }
 }
 
-/* — Desktop — */
 @media (min-width: 1024px) {
-  .list li {
-    flex: 1 1 calc(33.333% - 0.7rem);
+  .card {
+    flex: 1 1 calc(33.333% - 1rem);
+    max-width: calc(33.333% - 0.7rem);
   }
-    .label {
-  font-size: 1.8rem;
+}
+
+@media (min-width: 1280px) {
+  .card {
+    flex: 1 1 calc(25% - 1rem);
+    max-width: calc(25% - 0.75rem);
   }
 }

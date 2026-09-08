@@ -40,7 +40,7 @@
 }
 
 .logo span {
-  font-family: var(--font-title);
+  font-family: var(--font-display);
   font-size: 0.65rem;
   letter-spacing: 5px;
   align-self: flex-end;
@@ -58,7 +58,11 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  background: linear-gradient(120deg, var(--color-primary), var(--color-primary-light));
+  background: linear-gradient(
+    120deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
   color: #fff;
   color: white;
   padding: 10px 20px;
@@ -69,7 +73,6 @@
   transition: all 0.25s ease;
   white-space: nowrap;
 }
-
 
 /* — Tablet — */
 @media (min-width: 768px) {

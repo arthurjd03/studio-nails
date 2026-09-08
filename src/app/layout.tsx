@@ -5,7 +5,7 @@ import { CartProvider } from "@/context/CartContext";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-title",
+  variable: "--font-display",
   display: "swap",
 });
 

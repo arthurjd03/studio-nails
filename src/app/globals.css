@@ -7,12 +7,14 @@
 :root {
 
   --color-primary: #e5396b;
-  --color-primary-light: #fce8ef;
-  --color-primary-dark: #c92d5a;
+  --color-primary-light: #fb95b2;
+  --color-primary-dark: #a51f48;
   --color-background: #fde9d6;
-  --color-text: #9f1818;
-  --color-text-muted: #4A3D39;
+  --color-text: #2d1a24;
+  --color-text-muted: #7a6068;
 
+  --color-footer: #2d1a24;
+  --shadow-soft: 0 18px 40px -18px rgba(45, 26, 36, 0.28);
 
   --padding-inline: 1.5rem;
 }

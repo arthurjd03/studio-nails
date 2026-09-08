@@ -7,3 +7,8 @@ export type Service = {
   category: "nails" | "braids";
   icon?: string;
 };
+
+export interface GalleryImage {
+  src: string;
+  alt: string;
+}

@@ -1,358 +1,284 @@
-/* — Scroll Reveal — */
-.label,
-.galleryTitle,
-.cards {
-  opacity: 0;
-}
-
-.gallerySection.visible .label {
-  animation: fadeDown 0.5s ease 0s forwards;
-}
-
-.gallerySection.visible .galleryTitle {
-  animation: fadeDown 0.5s ease 0.15s forwards;
-}
-
-.gallerySection.visible .cards {
-  animation: fadeDown 0.5s ease 0.3s forwards;
-}
-
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* — Section — */
-.gallerySection {
+.section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  padding: 2rem;
+  gap: 2rem;
+  padding: 2.5rem var(--padding-inline);
 }
+
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   gap: 0.6rem;
+  text-align: center;
 }
+
 .eyebrow {
   font-size: 0.72rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--color-primary);
   font-weight: 700;
-  color: var(--color-text);
 }
 
 .title {
-  font-family: var(--font-title);
-  font-size: 1.6rem;
-  color: var(--color-text-muted);
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  font-family: var(--font-display);
 }
+
 .subtitle {
   color: var(--color-text-muted);
+  margin: 0;
+  max-width: 34rem;
   line-height: 1.7;
 }
-/* — Cards — */
+
 .cards {
   display: flex;
-  flex-direction: column; /* empilhado no mobile */
-  gap: 1rem;
+  flex-direction: column;
+  gap: 1.25rem;
   width: 100%;
+  max-width: 56rem;
 }
 
 .card {
-  width: 100%;
-  background: white;
-  border-radius: 16px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 15rem;
+  padding: 1.25rem;
+  border: none;
+  border-radius: 1.5rem;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: all 0.25s ease;
-  border: 2px solid transparent;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  transform: translateY(-28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-primary);
-  box-shadow: 0 8px 30px rgba(229, 57, 107, 0.15);
+.section:global(.visible) .card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section:global(.visible) .card:nth-child(2) {
+  transition-delay: 0.18s;
 }
 
 .cardImage {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transition: transform 0.6s ease;
 }
 
-.cardImageNails {
-  background: linear-gradient(135deg, #f5b8cb 0%, #e5396b 100%);
+.card:hover .cardImage {
+  transform: scale(1.06);
 }
 
-.cardImageFeet {
-  background: linear-gradient(135deg, #f5b8cb 0%, #c2185b 100%);
-}
-
-.cardContent {
-  padding: 1rem 1.2rem;
+.overlay {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
 }
 
 .cardTitle {
-  font-family: var(--font-title);
-  font-size: 1rem;
-  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0;
 }
 
-.cardSub {
-  font-size: 0.75rem;
-  color: #999;
-  margin-top: 2px;
+.cardHint {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--color-primary-dark);
+  font-weight: 600;
 }
 
-.cardArrow {
-  width: 32px;
-  height: 32px;
-  background: var(--color-primary-light);
-  border-radius: 50%;
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(45, 26, 36, 0) 40%, rgba(45, 26, 36, 0.25));
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    flex-direction: row;
+  }
+  .card {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 20rem;
+  }
+}
+
+/*CSS MODAL*/
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
-  flex-shrink: 0;
-}
-
-/* — Modal — */
-.modalOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: flex-end; /* bottom sheet no mobile */
-  justify-content: center;
-  z-index: 100;
+  padding: 1rem;
+  background: rgba(45, 26, 36, 0.6);
+  backdrop-filter: blur(6px);
   animation: fadeIn 0.25s ease;
 }
 
 .modal {
-  background: white;
-  border-radius: 20px 20px 0 0; /* bottom sheet no mobile */
-  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   width: 100%;
-  max-width: 650px;
-  animation: slideUp 0.3s ease;
+  max-width: 62rem;
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  animation: popIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.modalHeader {
+.head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.2rem;
+  gap: 1rem;
 }
 
-.modalTitle {
-  font-family: var(--font-title);
-  font-size: 1.1rem;
-  color: var(--color-text);
+.titleModal {
+  font-size: 1.35rem;
 }
 
-.closeBtn {
-  width: 36px;
-  height: 36px;
-  background: var(--color-primary-light);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  color: var(--color-primary);
-  display: flex;
+.close {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  width: 2.25rem;
+  height: 2.25rem;
   flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(229, 57, 107, 0.1);
+  color: var(--color-primary-dark);
+  cursor: pointer;
 }
 
-.closeBtn:hover {
-  background: var(--color-primary);
-  color: white;
-}
-
-/* — Embla — */
-.emblaWrapper {
+.carousel {
   position: relative;
-  width: 100%;
-}
-
-.emblaViewport {
-  overflow: hidden;
-  width: 100%;
-}
-
-.emblaContainer {
   display: flex;
-  gap: 0.8rem;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.emblaSlide {
-  flex: 0 0 60%; /* tela no mobile */
+.viewport {
+  overflow: hidden;
+  flex: 1 1 auto;
   min-width: 0;
-  transition: all 0.4s ease;
+  border-radius: 1.25rem;
 }
 
-.slideImage {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  height: auto;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+.container {
+  display: flex;
+  gap: 1rem;
 }
 
-.emblaSlideActive {
+.slide {
+  flex: 0 0 82%;
+  min-width: 0;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  filter: blur(3px);
+  opacity: 0.5;
+  transform: scale(0.9);
+  transition:
+    filter 0.4s ease,
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.slideActive {
+  filter: blur(0);
   opacity: 1;
-  filter: none;
   transform: scale(1);
 }
 
-.emblaSlideInactive {
-  opacity: 0.35;
-  filter: blur(2px);
-  transform: scale(0.92);
+.slideImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
-/* — Arrows — */
-.arrows {
-  margin-top: 1.2rem;
-  display: flex;
-  justify-content: center;
-  gap: 0.8rem;
-}
-
-.arrowBtn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  background: var(--color-primary-light);
-  color: var(--color-primary);
-  cursor: pointer;
-  display: flex;
+.arrow {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  transition: all 0.25s ease;
-}
-
-.arrowBtn:hover {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
   background: var(--color-primary);
-  color: white;
-  transform: translateY(-2px);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: background 0.25s ease;
 }
 
-/* — Animations — */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+.arrow:hover {
+  background: var(--color-primary-dark);
 }
 
-@keyframes slideUp {
-  from { transform: translateY(100%); }
-  to   { transform: translateY(0); }
-}
-
-@keyframes scaleIn {
-  from { transform: scale(0.95); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
-}
-
-/* — Mobile large (480px) — */
-@media (min-width: 480px) {
-  .cards {
-    flex-direction: row; /* lado a lado a partir de 480px */
-    gap: 1.2rem;
-  }
-
-  .cardImage {
-    height: 160px;
-  }
-
-  .emblaSlide {
-    flex: 0 0 75%;
-  }
-  .label {
-    font-size: 1.6rem;
-  }
-}
-
-/* — Tablet (768px) — */
 @media (min-width: 768px) {
-  .gallerySection {
-    gap: 2rem;
-  }
-  .label {
-    font-size: 1.8rem;
-  }
-  .cards {
-    max-width: 800px;
-    gap: 1.5rem;
-  }
-
-  .cardImage {
-    width: 300px;
-    height: 200px;
-  }
-
-  .cardTitle {
-    font-size: 1.1rem;
-  }
-
-  .modalOverlay {
-    align-items: center; /* centro na tela em tablet+ */
-  }
-
-  .modal {
-    border-radius: 20px;
-    width: 90%;
-    animation: scaleIn 0.25s ease;
-  }
-
-  .emblaSlide {
-    flex: 0 0 65%;
-  }
-
-  .emblaContainer {
-    gap: 1.2rem;
+  .slide {
+    flex: 0 0 46%;
   }
 }
 
-/* — Tablet large (1024px) — */
 @media (min-width: 1024px) {
-  .cards {
-    max-width: 800px;
-  }
-
-  .cardImage {
-    width: 400px;
-    height: 200px;
-  }
-
-  .emblaSlide {
-    flex: 0 0 55%;
+  .slide {
+    flex: 0 0 38%;
   }
 }
 
-/* — Desktop (1280px) — */
-@media (min-width: 1280px) {
-  .gallerySection {
-    padding: 4rem var(--padding-inline);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  .emblaSlide {
-    flex: 0 0 50%;
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
