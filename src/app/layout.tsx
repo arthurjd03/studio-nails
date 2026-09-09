@@ -17,7 +17,7 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Suellen Nails - Manicure Profissional",
+  title: "Suellen Nails - Manicure e pedicure Profissional",
   description:
     "Manicure e pedicure com atendimento personalizado. Agende seu horário agora.",
 };
@@ -26,8 +26,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR">
-      <body className={`${playfair.variable} ${greatVibes.variable} antialiased`}>
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body
+        className={`${playfair.variable} ${greatVibes.variable} antialiased`}
+        suppressHydrationWarning
+      >
         <CartProvider>{children}</CartProvider>
       </body>
     </html>

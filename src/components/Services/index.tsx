@@ -9,13 +9,13 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import formatCurrency from "@/utils/format";
 
 export default function Services() {
-  const sectionRef = useScrollReveal<HTMLElement>();
+  const ref = useScrollReveal<HTMLElement>();
   
   const { addService, removeService, hasService, openModal, services: isSelected } =
     useCart();
 
   return (
-    <section id="servicos" ref={sectionRef} className={styles.section}>
+    <section id="services" ref={ref} className={styles.section}>
       <div className={styles.header}>
         <span className={styles.eyebrow}>Serviços</span>
         <h2 className={styles.title}>Monte o seu atendimento</h2>

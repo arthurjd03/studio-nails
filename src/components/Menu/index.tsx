@@ -1,33 +1,34 @@
-"use client";
-import styles from "./styles.module.css";
-import { MessageCircle } from "lucide-react";
+import { CalendarHeart } from "lucide-react";
 
-export default function Menu() {
+import styles from "./styles.module.css";
+
+const links = [
+  { href: "#aboutme", label: "Sobre" },
+  { href: "#gallery", label: "Galeria" },
+  { href: "#services", label: "Serviços" },
+  { href: "#contact", label: "Contato" },
+];
+
+export function Menu() {
   return (
     <header className={styles.header}>
+      <a href="#init" className={styles.brand}>
+        <span className={styles.logo}>Suellen</span>
+        <span className={styles.subtitle}>Nails</span>
+      </a>
 
-      <div className={styles.container}>
-        <div className={styles.logo}>
-          <em>Suellen</em> <span>Nails</span>
-        </div>
+      <nav className={styles.nav} aria-label="Navegação principal">
+        {links.map((link) => (
+          <a key={link.href} href={link.href} className={styles.link}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
 
-        <nav className={styles.nav}>
-          <a href="#init">Início</a>
-          <a href="#aboutme">Sobre mim</a>
-          <a href="#gallery">Galeria</a>
-          <a href="#contact">Contato</a>
-        </nav>
-
-        <a
-          href="https://wa.me/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.cta}
-        >
-          <MessageCircle size={18} />
-          <span>Agendar horário</span>
-        </a>
-      </div>
+      <a className={styles.cta} href="#servicos">
+        <CalendarHeart size={16} aria-hidden="true" />
+        Agendar horário
+      </a>
     </header>
   );
 }

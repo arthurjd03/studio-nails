@@ -60,7 +60,7 @@ export default function About() {
           </div>
           <div className={styles.stat}>
             <span className={styles.statValue}>400+</span>
-            <span className={styles.statLabel}>clientes atendidas</span>
+            <span className={styles.statLabel}>unhas feitas</span>
           </div>
         </div>
       </div>

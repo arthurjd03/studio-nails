@@ -1,7 +1,3 @@
-
-import { CameraIcon, MessageCircle } from "lucide-react";
-import { INSTAGRAM_URL } from "@/data/site";
-import { WHATSAPP_NUMBER } from "@/utils/whatsapp";
 import styles from "./styles.module.css";
 
 export function Footer() {

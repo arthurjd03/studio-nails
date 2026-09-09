@@ -22,7 +22,7 @@ export default function Contact() {
     {
       icon: <MessageCircle size={22} aria-hidden="true" />,
       title: "WhatsApp",
-      value: "(11) 99876-5432",
+      value: "38 99883-6488",
       href: `https://wa.me/${WHATSAPP_NUMBER}`,
     },
     {
