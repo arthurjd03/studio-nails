@@ -13,5 +13,15 @@ export default function RootErrorPage({ error, reset }: RootErrorProps) {
     console.error(error);
   }, [error]);
 
-  return <ErrorMessage reset={reset} />;
+  const isConnectionError =
+    error.message.includes("fetch") ||
+    error.message.includes("network") ||
+    (typeof window !== "undefined" && !navigator.onLine);
+
+  return (
+    <ErrorMessage
+      variant={isConnectionError ? "connection" : "error"}
+      reset={reset}
+    />
+  );
 }

@@ -55,6 +55,21 @@
   box-shadow: 0 8px 20px rgba(229, 57, 107, 0.25);
 }
 
+.btnSecondary {
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btnSecondary:hover {
+  background: #fcc6d663;
+}
+
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.95); }
   to   { opacity: 1; transform: scale(1); }

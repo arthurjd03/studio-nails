@@ -11,6 +11,7 @@ import { Footer } from "@/components/Footer";
 import { CartProvider } from "@/context/CartContext";
 
 export default function HomePage() {
+
   return (
     <CartProvider>
       <Container>
