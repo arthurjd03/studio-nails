@@ -28,7 +28,7 @@ export default function Contact() {
     {
       icon: <Camera size={22} aria-hidden="true" />,
       title: "Instagram",
-      value: "@suellennails",
+      value: "@suellenj.damasceno",
       href: INSTAGRAM_URL,
     },
     {

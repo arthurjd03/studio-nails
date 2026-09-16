@@ -55,8 +55,8 @@ export default function Gallery() {
         >
           <img
             className={styles.cardImage}
-            src={feetGallery[2]!.src}
-            alt={feetGallery[2]!.alt}
+            src={feetGallery[0]!.src}
+            alt={feetGallery[0]!.alt}
             loading="lazy"
           />
           <span className={styles.scrim} aria-hidden="true" />
