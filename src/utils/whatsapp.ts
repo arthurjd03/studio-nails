@@ -40,6 +40,7 @@ export function buildWhatsAppMessage(
 
   lines.push("");
   lines.push(" _Pedido gerado via site oficial_");
+  lines.push("Declaro que li e concordo com a Política de privacidade do estúdio.")
 
   return lines.join("\n");
 }

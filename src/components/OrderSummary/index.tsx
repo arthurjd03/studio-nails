@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, type SubmitEvent } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Send, Trash2, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
@@ -39,7 +39,7 @@ export function OrderSummary() {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     const message = buildWhatsAppMessage(services, {
       name,

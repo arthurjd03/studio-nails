@@ -17,10 +17,39 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Suellen Nails - Manicure e pedicure Profissional",
+title: {
+    default: "Suellen Nails | Estúdio de Unhas e Podologia",
+    template: "%s | Suellen Nails",
+  },
   description:
-    "Manicure e pedicure com atendimento personalizado. Agende seu horário agora.",
-};
+    "Especialista em Unhas, Esmaltação em Gel e Cuidado dos Pés em Paracatu - MG. Agende seu horário online de forma rápida e prática.",
+  keywords: [
+    "Suellen Nails",
+    "unhas Paracatu",
+    "manicure Paracatu",
+    "alongamento de unhas",
+    "esmaltação em gel",
+    "pedicure Paracatu",
+    "agendamento de unhas",
+  ],
+  authors: [{ name: "Suellen Nails" }],
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Suellen Nails | Estúdio de Unhas e Podologia",
+    description:
+      "Agende seu serviço de unhas de forma simples e rápida via WhatsApp.",
+    url: "https://suellen-nails.vercel.app",
+    siteName: "Suellen Nails",
+    locale: "pt_BR",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 
 export default function RootLayout({
   children,
