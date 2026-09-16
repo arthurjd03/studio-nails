@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 
 type ErrorMessageProps = {
   variant: "error" | "not-found" | "connection";
-  reset: () => void;
+  reset?: () => void;
   onReload?: () => void;
   showReset?: boolean;
   secondaryLabel?: string;

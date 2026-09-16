@@ -1,7 +1,7 @@
 .section {
   display: flex;
   justify-content: center;
-  padding: .5rem var(--padding-inline);
+  padding: 0.5rem var(--padding-inline);
   margin-bottom: 2rem;
 }
 

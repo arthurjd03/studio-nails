@@ -38,20 +38,26 @@
   line-height: 1.7;
 }
 
-
 .copy {
   margin: 0;
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.55);
+  display: flex;
+  flex-direction: column;
 }
-
+.policy {
+  text-decoration: none;
+  color: grey;
+}
+.policy:hover {
+  color: #666;
+}
 @media (min-width: 768px) {
   .footer {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
   }
-
   .brand {
     align-items: flex-start;
   }

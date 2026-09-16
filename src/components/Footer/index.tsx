@@ -12,7 +12,12 @@ export function Footer() {
         Cuidado, técnica e carinho em cada detalhe das suas unhas.
       </p>
 
-      <p className={styles.copy}>© {new Date().getFullYear()} Suellen Nails</p>
+      <p className={styles.copy}>
+        © {new Date().getFullYear()} Suellen Nails
+        <a href="/privacy" target="_blank" className={styles.policy}>
+          Política de privacidade
+        </a>
+      </p>
     </footer>
   );
 }

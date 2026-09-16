@@ -158,7 +158,29 @@
   min-height: 5rem;
   resize: vertical;
 }
+.checkboxField {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
 
+.checkbox {
+  margin-top: 0.2rem;
+  cursor: pointer;
+}
+
+.checkboxText {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--color-text-muted, #7a6068);
+}
+
+.link {
+  color: var(--color-primary, #e5396b);
+  text-decoration: underline;
+}
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -182,7 +204,11 @@
 
 .primary {
   border: none;
-  background: linear-gradient(120deg, var(--color-primary), var(--color-primary-light));
+  background: linear-gradient(
+    120deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
   color: #fff;
   box-shadow: 0 14px 30px -14px var(--color-primary-dark);
 }
@@ -196,6 +222,12 @@
 .primary:hover,
 .secondary:hover {
   transform: translateY(-2px);
+}
+
+.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(0.5);
 }
 
 .empty {

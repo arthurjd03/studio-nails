@@ -100,7 +100,11 @@
 
 .primaryBtn {
   border: none;
-  background: linear-gradient(120deg, var(--color-primary), var(--color-primary-light));
+  background: linear-gradient(
+    120deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
   color: #fff;
   box-shadow: 0 14px 30px -14px var(--color-primary-dark);
 }
@@ -120,7 +124,7 @@
   background: rgba(255, 255, 255, 0.55);
 }
 
-/* Orbs*/ 
+/* Orbs*/
 .orb {
   position: absolute;
   border-radius: 50%;

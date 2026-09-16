@@ -116,7 +116,11 @@
 .scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(45, 26, 36, 0) 40%, rgba(45, 26, 36, 0.25));
+  background: linear-gradient(
+    180deg,
+    rgba(45, 26, 36, 0) 40%,
+    rgba(45, 26, 36, 0.25)
+  );
   z-index: 1;
 }
 

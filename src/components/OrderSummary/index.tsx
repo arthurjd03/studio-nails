@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import Link from "next/link";
 import { ArrowLeft, ArrowRight, Send, Trash2, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { paymentMethods } from "@/data/site";
@@ -17,6 +18,7 @@ export function OrderSummary() {
   const [phone, setPhone] = useState("");
   const [payment, setPayment] = useState(paymentMethods[0]!);
   const [notes, setNotes] = useState("");
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   useEffect(() => {
     if (isOpen) setStep(1);
@@ -180,7 +182,21 @@ export function OrderSummary() {
                 placeholder="Preferência de dia, horário, inspiração de cor…"
               />
             </label>
-
+            <label className={styles.checkboxField}>
+              <input
+                type="checkbox"
+                checked={acceptedTerms}
+                onChange={(e) => setAcceptedTerms(e.target.checked)}
+                className={styles.checkbox}
+                required
+              />
+              <span className={styles.checkboxText}>
+                Li e concordo com a{" "}
+                <Link href="/privacy" target="_blank" className={styles.link}>
+                  Política de privacidade
+                </Link>
+              </span>
+            </label>
             <div className={styles.total}>
               <span>Total</span>
               <span className={styles.totalValue}>{formatCurrency(total)}</span>
@@ -195,7 +211,11 @@ export function OrderSummary() {
                 <ArrowLeft size={18} aria-hidden="true" />
                 Voltar
               </button>
-              <button type="submit" className={styles.primary}>
+              <button
+                type="submit"
+                className={styles.primary}
+                disabled={!acceptedTerms}
+              >
                 <Send size={18} aria-hidden="true" />
                 Enviar no WhatsApp
               </button>

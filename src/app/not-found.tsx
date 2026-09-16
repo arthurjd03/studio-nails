@@ -9,7 +9,7 @@ export default function NotFound() {
       variant="not-found"
       showReset={false}
       secondaryLabel="Voltar ao início"
-      reset={() => router.push("/")}
+      onReload={() => router.push("/")}
     />
   );
 }

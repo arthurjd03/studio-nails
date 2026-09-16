@@ -51,7 +51,11 @@
   padding: 0.6rem 1.1rem;
   border: none;
   border-radius: 50px;
-  background: linear-gradient(120deg, var(--color-primary), var(--color-primary-light));
+  background: linear-gradient(
+    120deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
   color: #fff;
   font-size: 0.85rem;
   font-weight: 600;

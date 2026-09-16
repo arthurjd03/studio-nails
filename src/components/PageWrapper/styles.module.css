@@ -1,12 +1,12 @@
 .container {
   width: 100%;
   overflow-x: hidden;
-  background: linear-gradient(90deg,#fde9d6 36%,   #fb83a5 83%);
+  background: linear-gradient(90deg, #fde9d6 36%, #fb83a5 83%);
   background-size: 200% 100%;
   animation: gradientMove 4s ease infinite;
 }
 
-@keyframes gradientMove  {
+@keyframes gradientMove {
   0% {
     background-position: 0% 50%;
   }
