@@ -1,16 +1,13 @@
-"use client"
+"use client";
 
 import { useEffect, useState, type FormEvent } from "react";
 import { ArrowLeft, ArrowRight, Send, Trash2, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { paymentMethods } from "@/data/site";
-import {
-  buildWhatsAppMessage,
-  buildWhatsAppUrl,
-} from "@/utils/whatsapp";
+import { buildWhatsAppMessage, buildWhatsAppUrl } from "@/utils/whatsapp";
+import formatCurrency from "@/utils/format";
 
 import styles from "./styles.module.css";
-import formatCurrency from "@/utils/format";
 
 export function OrderSummary() {
   const { isOpen, closeModal, services, removeService, total, clearCart } =

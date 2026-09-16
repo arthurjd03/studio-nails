@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Banknote, CreditCard, QrCode, WalletCards } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";

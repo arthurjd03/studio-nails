@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Sparkles, CalendarHeart, Images, Star } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Service } from "@/types/service";
 import {

@@ -1,5 +1,5 @@
 import { Menu } from "@/components/Menu";
-import Container from "@/components/Container";
+import PageWrapper from "@/components/PageWrapper";
 import { Hero } from "@/components/Hero";
 import AboutMe from "@/components/About";
 import Gallery from "@/components/Gallery";
@@ -11,10 +11,9 @@ import { Footer } from "@/components/Footer";
 import { CartProvider } from "@/context/CartContext";
 
 export default function HomePage() {
-
   return (
     <CartProvider>
-      <Container>
+      <PageWrapper>
         <Menu />
         <Hero />
         <AboutMe />
@@ -22,7 +21,7 @@ export default function HomePage() {
         <Services />
         <Contact />
         <PaymentMethods />
-      </Container>
+      </PageWrapper>
       <Footer />
       <OrderSummary />
     </CartProvider>

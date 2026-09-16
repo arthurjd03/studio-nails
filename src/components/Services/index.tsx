@@ -1,18 +1,22 @@
 "use client";
 
-import styles from "./styles.module.css";
-
+import { Check, Clock, ShoppingBag } from "lucide-react";
 import { nailServices } from "@/data/site";
 import { useCart } from "@/context/CartContext";
-import { Check, Clock, ShoppingBag } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import formatCurrency from "@/utils/format";
+import styles from "./styles.module.css";
 
 export default function Services() {
   const ref = useScrollReveal<HTMLElement>();
-  
-  const { addService, removeService, hasService, openModal, services: isSelected } =
-    useCart();
+
+  const {
+    addService,
+    removeService,
+    hasService,
+    openModal,
+    services: isSelected,
+  } = useCart();
 
   return (
     <section id="services" ref={ref} className={styles.section}>

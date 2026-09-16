@@ -3,7 +3,7 @@ export type Service = {
   name: string;
   price: number;
   description?: string;
-  duration?: string
+  duration?: string;
   category: "nails" | "braids";
   icon?: string;
 };

@@ -1,9 +1,9 @@
 import styles from "./styles.module.css";
 
-type ContainerProps = {
+type PageWrapperProps = {
   children: React.ReactNode;
 };
 
-export default function Container({ children }: ContainerProps) {
+export default function PageWrapper({ children }: PageWrapperProps) {
   return <div className={styles.container}>{children}</div>;
 }

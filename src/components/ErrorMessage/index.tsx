@@ -1,7 +1,7 @@
 "use client";
 
-import styles from "./styles.module.css";
 import { AlertCircle, WifiOff } from "lucide-react";
+import styles from "./styles.module.css";
 
 type ErrorMessageProps = {
   variant: "error" | "not-found" | "connection";

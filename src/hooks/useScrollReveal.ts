@@ -1,18 +1,13 @@
-"use client"
+"use client";
 
 import { useEffect, useRef } from "react";
 
 interface Options {
-  /** Reveal only once (never remove the class again). */
   once?: boolean;
   threshold?: number;
   visibleClass?: string;
 }
 
-/**
- * Adds a "visible" class to the referenced element when it enters the viewport
- * and removes it when scrolling back up (unless `once` is set).
- */
 export function useScrollReveal<T extends HTMLElement>({
   once = false,
   threshold = 0.15,
