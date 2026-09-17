@@ -8,11 +8,10 @@ import { OrderSummary } from "@/components/OrderSummary";
 import Contact from "@/components/Contact";
 import PaymentMethods from "@/components/PaymentMethods";
 import { Footer } from "@/components/Footer";
-import { CartProvider } from "@/context/CartContext";
 
 export default function HomePage() {
   return (
-    <CartProvider>
+    <>
       <PageWrapper>
         <Menu />
         <Hero />
@@ -24,6 +23,6 @@ export default function HomePage() {
       </PageWrapper>
       <Footer />
       <OrderSummary />
-    </CartProvider>
+    </>
   );
 }
