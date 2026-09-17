@@ -10,7 +10,7 @@ interface Options {
 
 export function useScrollReveal<T extends HTMLElement>({
   once = false,
-  threshold = 0.15,
+  threshold = 0.1,
   visibleClass = "visible",
 }: Options = {}) {
   const ref = useRef<T | null>(null);
@@ -35,7 +35,7 @@ export function useScrollReveal<T extends HTMLElement>({
           }
         });
       },
-      { threshold, rootMargin: "0px 0px -60px 0px" },
+      { threshold, rootMargin: "0px 0px 50px 0px" },
     );
 
     observer.observe(el);
