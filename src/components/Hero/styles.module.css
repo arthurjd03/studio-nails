@@ -47,7 +47,7 @@
   align-items: center;
   gap: 0.4rem;
   padding: 0.4rem 0.9rem;
-  border-radius: var(--radius-pill);
+  border-radius: 50px;
   background: rgba(255, 255, 255, 0.6);
   color: var(--color-primary-dark);
   font-size: 0.75rem;
@@ -230,7 +230,9 @@
   .title {
     font-size: clamp(2.8rem, 4vw, 3.8rem);
   }
-
+  .text {
+    font-size: 1.2rem;
+  }
   .actions {
     justify-content: flex-start;
   }

@@ -23,7 +23,7 @@
 }
 
 .title {
-  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
   font-family: var(--font-display);
 }
 
@@ -124,16 +124,7 @@
   z-index: 1;
 }
 
-@media (min-width: 768px) {
-  .cards {
-    flex-direction: row;
-  }
-  .card {
-    flex: 1 1 0;
-    min-width: 0;
-    min-height: 20rem;
-  }
-}
+
 
 /*CSS MODAL*/
 
@@ -232,7 +223,7 @@
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .arrow {
@@ -256,14 +247,32 @@
 }
 
 @media (min-width: 768px) {
+  .section {
+    margin-bottom: 4rem;
+  }
+  .cards {
+    flex-direction: row;
+  }
+  .card {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 20rem;
+  }
+
   .slide {
     flex: 0 0 46%;
   }
 }
-
 @media (min-width: 1024px) {
+  .eyebrow {
+    font-size: 1.4rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
   .slide {
-    flex: 0 0 38%;
+    flex: 0 0 68%;
   }
 }
 

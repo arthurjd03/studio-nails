@@ -23,7 +23,7 @@
 }
 
 .title {
-  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
   font-family: var(--font-display);
   color: var(--color-text);
 }
@@ -187,15 +187,30 @@
 }
 
 @media (min-width: 1024px) {
+  .eyebrow {
+    font-size: 1.4rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
   .card {
     flex: 1 1 calc(33.333% - 1rem);
-    max-width: calc(33.333% - 0.7rem);
+    max-width: 100%;
+  }
+  .name {
+    font-size: 1.25rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .meta {
+    margin-top: auto;
   }
 }
 
 @media (min-width: 1280px) {
   .card {
-    flex: 1 1 calc(25% - 1rem);
-    max-width: calc(25% - 0.75rem);
+    flex: 1 1 calc(35% - 1rem);
+    max-width: 100%;
   }
 }

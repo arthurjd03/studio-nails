@@ -23,7 +23,7 @@
 }
 
 .title {
-  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
   font-family: var(--font-display);
 }
 
@@ -159,5 +159,8 @@
   .body {
     flex-direction: row;
     align-items: flex-start;
+  }
+  .eyebrow {
+    font-size: 1.4rem;
   }
 }
