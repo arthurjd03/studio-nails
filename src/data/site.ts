@@ -4,7 +4,7 @@ export const nailServices: Service[] = [
   {
     id: 1,
     name: "Manicure",
-    price: 40,
+    price: 35,
     category: "nails",
     description: "Cutilagem, lixamento e esmaltação com acabamento impecável.",
     duration: "50 min",
@@ -12,7 +12,7 @@ export const nailServices: Service[] = [
   {
     id: 2,
     name: "Pedicure",
-    price: 40,
+    price: 35,
     category: "nails",
     description: "Cuidado relaxante, esfoliação e esmaltação para os pés.",
     duration: "1h",
@@ -28,7 +28,7 @@ export const nailServices: Service[] = [
   {
     id: 4,
     name: "Pé e mão",
-    price: 65,
+    price: 70,
     category: "nails",
     description: "O cuidado completo em uma única sessão, com desconto.",
     duration: "1h40",
@@ -36,7 +36,7 @@ export const nailServices: Service[] = [
   {
     id: 5,
     name: "Cuticulagem",
-    price: 40,
+    price: 35,
     category: "nails",
     description:
       "Cuidado especializado e delicado com as unhas, incluindo remoção ou tratamento das cutículas, higienização, corte, lixamento e finalização com base fortalecedora.",
@@ -45,7 +45,7 @@ export const nailServices: Service[] = [
   {
     id: 6,
     name: "Esmaltação",
-    price: 40,
+    price: 35,
     category: "nails",
     description: "Cor intensa que dura até 3 semanas sem lascar.",
     duration: "1h10",
@@ -53,7 +53,7 @@ export const nailServices: Service[] = [
   {
     id: 7,
     name: "Plástica dos pés",
-    price: 80,
+    price: 85,
     category: "nails",
     description:
       "Tratamento de renovação e hidratação profunda para os pés. Remove asperezas, calosidades e células mortas sem lâminas, deixando a pele macia, renovada e aveludada.",
@@ -87,9 +87,10 @@ export const feetGallery: GalleryImage[] = [
   { src: "/images/gallery/feets/feet-3.webp", alt: "Trabalho 3" },
 ];
 export const INSTAGRAM_URL = "https://instagram.com/suellenj.damasceno";
-export const LOCATION = "Rua das Acácias, 128 — Vila Mariana, São Paulo";
 
-export const MAPS_URL = "https://maps.google.com/?q=Vila+Mariana+Sao+Paulo";
+export const LOCATION = "Rua Benjamim carneiro, 110 - Centro";
+export const MAPS_URL = "https://maps.app.goo.gl/tjrQ6mExNmRWQF3h8";
+
 export const paymentMethods = [
   "PIX",
   "Cartão de débito",

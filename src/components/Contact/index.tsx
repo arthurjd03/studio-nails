@@ -44,7 +44,7 @@ export default function Contact() {
       <div className={styles.header}>
         <span className={styles.eyebrow}>Contato</span>
 
-        <h2 className={styles.title}>Vamos marcar o seu horário</h2>
+        <h2 className={styles.title}>Pronta para se cuidar? Fale comigo</h2>
       </div>
 
       <div className={styles.body}>

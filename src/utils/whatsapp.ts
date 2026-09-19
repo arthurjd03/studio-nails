@@ -32,6 +32,10 @@ export function buildWhatsAppMessage(
   lines.push(` *Total:* *${formatCurrency(total)}*`);
   lines.push(` *Pagamento:* ${details.payment}`);
 
+  lines.push("");
+  lines.push(" *Gostaria de saber:*");
+  lines.push(" Quais datas e horários estão disponíveis?");
+
   if (details.notes && details.notes.trim().length > 0) {
     lines.push("");
     lines.push(` *Observações:*`);
@@ -40,6 +44,8 @@ export function buildWhatsAppMessage(
 
   lines.push("");
   lines.push(" _Pedido gerado via site oficial_");
+  
+  lines.push("");
   lines.push("Declaro que li e concordo com a Política de privacidade do estúdio.")
 
   return lines.join("\n");
