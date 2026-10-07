@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💅 Suellen Nails
 
-## Getting Started
+Landing page moderna e responsiva desenvolvida para o estúdio da **Suellen Nails** (Paracatu - MG), focada na apresentação de serviços de manicure/pedicure, exibição de portfólio e solicitação de agendamentos via WhatsApp.
 
-First, run the development server:
+> **Status:** Frontend funcional (sem backend/banco de dados no momento).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Tecnologias e Ferramentas
+
+- **Core:** Next.js 16 (App Router), React 19, TypeScript 5
+- **Estilização:** CSS Modules, Lucide React (ícone), Google Fonts (`Playfair Display` & `Great Vibes`)
+- **Qualidade & Deploy:** ESLint 9, Vercel
+
+---
+
+## ✨ Funcionalidades
+
+- 📱 **Interface Mobile-First:** Design elegante, responsivo e adaptado para todos os dispositivos.
+- 💅 **Catálogo Interativo:** Exibição de serviços com preços, durações e adição ao carrinho com prevenção de duplicados e cálculo automático do total.
+- 🖼️ **Galeria de Fotos:** Portfólio separado por categorias (Mãos e Pés) com visualização em modal.
+- 💬 **Agendamento via WhatsApp:** Checkout simples com coleta de dados da cliente, resumo do pedido e geração de mensagem formatada.
+- 🔍 **SEO & Acessibilidade:** Metadata configurada, Open Graph, suporte à navegação por teclado e navegação suave por âncoras.
+- 🔐 **Política de Privacidade:** Rota dedicada `/privacy` com aceite obrigatório na solicitação do pedido.
+
+---
+
+## 📁 Estrutura de Arquivos
+
+```text
+suellen-nails/
+├── public/
+│   └── images/gallery/       # Mídias e fotos do portfólio
+├── src/
+│   ├── app/                  # Rotas e páginas (App Router)
+│   ├── components/           # Componentes encapsulados com CSS Modules
+│   ├── context/              # CartContext (Estado global do pedido)
+│   ├── data/                 # Informações estáticas (serviços, horários, contato)
+│   ├── hooks/                # Hooks customizados (ex: useScrollReveal)
+│   ├── types/                # Definições TypeScript
+│   └── utils/                # Formatação e gerador de mensagem do WhatsApp
 ```
+---
+## 👨‍💻 Autor
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Arthur José**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📄 Licença
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este projeto foi desenvolvido para o negócio **Suellen Nails**. O uso, reprodução ou redistribuição de imagens, identidade visual, informações comerciais e outros conteúdos específicos da marca deve ser autorizado pelos respectivos responsáveis.

@@ -4,8 +4,7 @@ import { Camera, Clock, MapPin, MessageCircle } from "lucide-react";
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { businessHours, INSTAGRAM_URL, LOCATION, MAPS_URL } from "@/data/site";
-import { WHATSAPP_NUMBER } from "@/utils/whatsapp";
-
+import { WHATSAPP_URL } from "@/utils/whatsapp";
 import styles from "./styles.module.css";
 
 type ContactItem = {
@@ -23,7 +22,7 @@ export default function Contact() {
       icon: <MessageCircle size={22} aria-hidden="true" />,
       title: "WhatsApp",
       value: "38 99883-6488",
-      href: `https://wa.me/${WHATSAPP_NUMBER}`,
+      href: WHATSAPP_URL,
     },
     {
       icon: <Camera size={22} aria-hidden="true" />,

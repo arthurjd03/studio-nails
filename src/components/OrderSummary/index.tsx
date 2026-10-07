@@ -47,7 +47,9 @@ export function OrderSummary() {
       payment,
       notes,
     });
-    window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
+    const url = buildWhatsAppUrl(message);
+    window.open(url, "_blank", "noopener,noreferrer");
+
     clearCart();
     setName("");
     setPhone("");

@@ -59,8 +59,8 @@ export default function About() {
             <span className={styles.statLabel}>anos de experiência</span>
           </div>
           <div className={styles.stat}>
-            <span className={styles.statValue}>400+</span>
-            <span className={styles.statLabel}>unhas feitas</span>
+            <span className={styles.statValue}>100%</span>
+            <span className={styles.statLabel}>dedicação e cuidado</span>
           </div>
         </div>
       </div>

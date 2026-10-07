@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles, CalendarHeart, Images, Star } from "lucide-react";
+import { Sparkles, CalendarHeart, Images, SmilePlus, Compass } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import heroPhoto from "@/assets/suellen.webp";
 import styles from "./styles.module.css";
@@ -12,7 +12,7 @@ export function Hero() {
     <section id="init" ref={ref} className={styles.hero}>
       <div className={styles.content}>
         <span className={styles.eyebrow}>
-          <Sparkles size={14} aria-hidden="true" />
+          <Compass size={14} aria-hidden="true" />
           Nail designer em Paracatu-MG
         </span>
         <h1 className={styles.title}>
@@ -50,8 +50,8 @@ export function Hero() {
         </div>
 
         <div className={styles.badge}>
-          <Star size={16} aria-hidden="true" />
-          5.0 · 400+ clientes felizes
+          <SmilePlus size={16} aria-hidden="true" />
+          Fazendo clientes felizes
         </div>
       </div>
     </section>
