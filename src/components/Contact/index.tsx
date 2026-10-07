@@ -25,12 +25,6 @@ export default function Contact() {
       href: WHATSAPP_URL,
     },
     {
-      icon: <Camera size={22} aria-hidden="true" />,
-      title: "Instagram",
-      value: "@suellenj.damasceno",
-      href: INSTAGRAM_URL,
-    },
-    {
       icon: <MapPin size={22} aria-hidden="true" />,
       title: "Localização",
       value: LOCATION,

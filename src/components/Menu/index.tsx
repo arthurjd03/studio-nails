@@ -1,6 +1,7 @@
-import { CalendarHeart } from "lucide-react";
+import { Camera } from "lucide-react";
 
 import styles from "./styles.module.css";
+import { INSTAGRAM_URL } from "@/data/site";
 
 const links = [
   { href: "#aboutme", label: "Sobre" },
@@ -25,9 +26,9 @@ export function Menu() {
         ))}
       </nav>
 
-      <a className={styles.cta} href="#servicos">
-        <CalendarHeart size={16} aria-hidden="true" />
-        Agendar horário
+      <a className={styles.cta} href={INSTAGRAM_URL} target="_blank">
+        <Camera size={16} aria-hidden="true" />
+        Minha rede social
       </a>
     </header>
   );

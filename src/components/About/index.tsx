@@ -2,7 +2,7 @@
 
 import { Heart, Check } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import aboutImage from "@/assets/about.jpg";
+import aboutImage from "@/assets/about.webp";
 import styles from "./styles.module.css";
 
 const highlights = [

@@ -13,7 +13,8 @@ export function Footer() {
       </p>
 
       <p className={styles.copy}>
-        © {new Date().getFullYear()} Suellen Nails
+        © {new Date().getFullYear()} Suellen Nails - Todos os direitos
+        reservados.
         <a href="/privacy" target="_blank" className={styles.policy}>
           Política de privacidade
         </a>
