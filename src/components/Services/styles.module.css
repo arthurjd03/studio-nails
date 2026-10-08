@@ -83,6 +83,13 @@
 .name {
   font-family: var(--font-display);
   font-size: 1.1rem;
+  color: var(--color-title, #222222);
+}
+.card:hover .name,
+.card:focus .name,
+.card:active .name,
+.card:visited .name {
+  color: var(--color-title, #222222);
 }
 
 .checkbox {
