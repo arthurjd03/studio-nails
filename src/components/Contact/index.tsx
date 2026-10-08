@@ -21,7 +21,7 @@ export default function Contact() {
     {
       icon: <MessageCircle size={22} aria-hidden="true" />,
       title: "WhatsApp",
-      value: "38 99883-6488",
+      value: "00 0000-0000",
       href: WHATSAPP_URL,
     },
     {

@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.brand}>
-        <span className={styles.logo}>Suellen</span>
+        <span className={styles.logo}>Studio</span>
         <span className={styles.subtitle}>Nails</span>
       </div>
 
@@ -13,7 +13,7 @@ export function Footer() {
       </p>
 
       <p className={styles.copy}>
-        © {new Date().getFullYear()} Suellen Nails - Todos os direitos
+        © {new Date().getFullYear()} Studio Nails - Todos os direitos
         reservados.
         <a href="/privacy" target="_blank" className={styles.policy}>
           Política de privacidade

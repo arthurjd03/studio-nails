@@ -1,9 +1,7 @@
 import type { Service } from "@/types/service";
 import formatCurrency from "./format";
 
-const rawNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
-export const WHATSAPP_NUMBER  = rawNumber?.replace(/\D/g, "");
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+export const WHATSAPP_URL ="";
 
 export interface OrderDetails {
   name: string;
@@ -19,7 +17,7 @@ export function buildWhatsAppMessage(
   const total = services.reduce((sum, s) => sum + s.price, 0);
   const lines: string[] = [];
 
-  lines.push(" *NOVO PEDIDO - SUELLEN NAILS* ");
+  lines.push(" *NOVO PEDIDO - STUDIO NAILS* ");
   lines.push("-----------------------------------");
   lines.push(` *Cliente:* ${details.name}`);
   lines.push(` *Contato:* ${details.phone}`);
@@ -46,9 +44,11 @@ export function buildWhatsAppMessage(
 
   lines.push("");
   lines.push(" _Pedido gerado via site oficial_");
-  
+
   lines.push("");
-  lines.push("Declaro que li e concordo com a Política de privacidade do estúdio.")
+  lines.push(
+    "Declaro que li e concordo com a Política de privacidade do Studio.",
+  );
 
   return lines.join("\n");
 }
@@ -57,6 +57,7 @@ export function buildWhatsAppUrl(
   message: string,
   phone: string = WHATSAPP_URL,
 ): string {
-  const cleanPhone = phone.replace(/\D/g, "");
-  return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+  /*   const cleanPhone = phone.replace(/\D/g, "");
+  return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`; */
+  return "javascript:void(0)";
 }

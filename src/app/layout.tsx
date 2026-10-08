@@ -18,30 +18,27 @@ const greatVibes = Great_Vibes({
 
 export const metadata: Metadata = {
 title: {
-    default: "Suellen Nails | Estúdio de Unhas e Podologia",
-    template: "%s | Suellen Nails",
+    default: "Studio Nails | Unhas e Podologia",
+    template: "%s | Studio Nails",
   },
   description:
     "Especialista em Unhas, Esmaltação em Gel e Cuidado dos Pés em Paracatu - MG. Agende seu horário online de forma rápida e prática.",
   keywords: [
-    "Suellen Nails",
-    "unhas Paracatu",
-    "manicure Paracatu",
+    "Studio Nails",
     "alongamento de unhas",
     "esmaltação em gel",
-    "pedicure Paracatu",
     "agendamento de unhas",
   ],
-  authors: [{ name: "Suellen Nails" }],
+  authors: [{ name: "Studio Nails" }],
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Suellen Nails | Estúdio de Unhas e Podologia",
+    title: "Studio Nails | Unhas e Podologia",
     description:
       "Agende seu serviço de unhas de forma simples e rápida via WhatsApp.",
-    url: "https://suellen-nails.vercel.app",
-    siteName: "Suellen Nails",
+    url: "https://studio-nails.vercel.app",
+    siteName: "Studio Nails",
     locale: "pt_BR",
     type: "website",
   },

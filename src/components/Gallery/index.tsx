@@ -21,7 +21,7 @@ export default function Gallery() {
         <h2 className={styles.title}>Trabalhos que falam por si</h2>
         <p className={styles.subtitle}>
           Escolha um álbum para ver de perto os acabamentos, formatos e cores
-          que mais fazem sucesso no estúdio.
+          que mais fazem sucesso.
         </p>
       </div>
 

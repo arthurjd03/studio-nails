@@ -2,7 +2,7 @@
 
 import { Sparkles, CalendarHeart, Images, SmilePlus, Compass } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import heroPhoto from "@/assets/suellen.webp";
+import heroPhoto from "@/assets/hero.webp";
 import styles from "./styles.module.css";
 
 export function Hero() {
@@ -43,7 +43,7 @@ export function Hero() {
           <img
             className={styles.photo}
             src={heroPhoto.src}
-            alt="Suellen, nail designer, sorrindo em seu estúdio"
+            alt="Ambiente do estúdio"
             width={1024}
             height={1280}
           />

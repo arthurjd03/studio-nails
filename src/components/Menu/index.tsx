@@ -14,7 +14,7 @@ export function Menu() {
   return (
     <header className={styles.header}>
       <a href="#init" className={styles.brand}>
-        <span className={styles.logo}>Suellen</span>
+        <span className={styles.logo}>Studio</span>
         <span className={styles.subtitle}>Nails</span>
       </a>
 
@@ -26,7 +26,7 @@ export function Menu() {
         ))}
       </nav>
 
-      <a className={styles.cta} href={INSTAGRAM_URL} target="_blank">
+      <a className={styles.cta} href="#">
         <Camera size={16} aria-hidden="true" />
         Minha rede social
       </a>

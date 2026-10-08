@@ -43,7 +43,7 @@ export default function About() {
           <img
             className={styles.image}
             src={aboutImage.src}
-            alt="Suellen aplicando esmalte nas unhas de uma cliente"
+            alt="Studio aplicando esmalte nas unhas de uma cliente"
             loading="lazy"
             width={1024}
             height={1280}

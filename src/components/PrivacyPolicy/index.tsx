@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
 
         <p className={styles.paragraph}>
           Esta Política de Privacidade descreve como o site{" "}
-          <strong>Suellen Nails</strong> coleta, usa e protege as informações
+          <strong>Studio Nails</strong> coleta, usa e protege as informações
           fornecidas pelos visitantes, em conformidade com a Lei Geral de
           Proteção de Dados (LGPD — Lei nº 13.709/2018).
         </p>
@@ -31,9 +31,9 @@ export default function PrivacyPolicy() {
         <h2 className={styles.subtitle}>2. Como usamos seus dados</h2>
         <p className={styles.paragraph}>
           As informações fornecidas são utilizadas exclusivamente para gerar uma
-          mensagem de agendamento, enviada diretamente para o WhatsApp da
-          profissional Suellen. Essa mensagem é criada localmente no seu
-          navegador e enviada por você através do aplicativo WhatsApp.
+          mensagem de agendamento, enviada diretamente para o WhatsApp. Essa
+          mensagem é criada localmente no seu navegador e enviada por você
+          através do aplicativo WhatsApp.
         </p>
 
         <h2 className={styles.subtitle}>3. Armazenamento de dados</h2>
@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
         <h2 className={styles.subtitle}>4. Compartilhamento de dados</h2>
         <p className={styles.paragraph}>
           Os dados informados são compartilhados unicamente com a profissional
-          Suellen, através da mensagem enviada ao WhatsApp dela. Não
+          para atendimento, através da mensagem enviada ao WhatsApp dela. Não
           compartilhamos, vendemos ou cedemos seus dados a terceiros, empresas
           de publicidade ou qualquer outra parte.
         </p>
