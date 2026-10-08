@@ -19,7 +19,6 @@ Aplicação web de agendamento, focada na apresentação de serviços de manicur
 -  **Interface Mobile-First:** Design elegante, responsivo e adaptado para todos os dispositivos.
 -  **Catálogo Interativo:** Exibição de serviços com preços, durações e adição ao carrinho com prevenção de duplicados e cálculo automático do total.
 -  **Galeria de Fotos:** Portfólio separado por categorias (Mãos e Pés) com visualização em modal.
--  **Agendamento via WhatsApp:** Checkout simples com coleta de dados da cliente, resumo do pedido e geração de mensagem formatada.
 -  **SEO & Acessibilidade:** Metadata configurada, Open Graph, suporte à navegação por teclado e navegação suave por âncoras.
 -  **Política de Privacidade:** Rota dedicada `/privacy` com aceite obrigatório na solicitação do pedido.
 
