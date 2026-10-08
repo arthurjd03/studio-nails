@@ -75,6 +75,7 @@ export const feetGallery: GalleryImage[] = [
   { src: "/images/gallery/feets/feet-2.webp", alt: "Trabalho 2" },
   { src: "/images/gallery/feets/feet-1.webp", alt: "Trabalho 2" },
 ];
+
 export const INSTAGRAM_URL = "https://instagram.com/";
 
 export const LOCATION = "Rua, Centro";

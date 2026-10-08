@@ -1,7 +1,7 @@
 import type { Service } from "@/types/service";
 import formatCurrency from "./format";
 
-export const WHATSAPP_URL ="";
+export const WHATSAPP_NUMBER = "";
 
 export interface OrderDetails {
   name: string;
@@ -55,9 +55,15 @@ export function buildWhatsAppMessage(
 
 export function buildWhatsAppUrl(
   message: string,
-  phone: string = WHATSAPP_URL,
+  phone: string = WHATSAPP_NUMBER,
 ): string {
-  /*   const cleanPhone = phone.replace(/\D/g, "");
-  return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`; */
-  return "javascript:void(0)";
+  /* 
+  * whatsApp desativado temporariamente.
+  
+  * Futuramente:
+    const cleanPhone = phone.replace(/\D/g, "");
+    return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`; */
+    void message
+    void phone
+  return "";
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type SubmitEvent } from "react";
+import { useCallback, useEffect, useState, type SubmitEvent } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Send, Trash2, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
@@ -20,14 +20,15 @@ export function OrderSummary() {
   const [notes, setNotes] = useState("");
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 
-  useEffect(() => {
-    if (isOpen) setStep(1);
-  }, [isOpen]);
+  const handleClose = useCallback(() => {
+    setStep(1);
+    closeModal();
+  }, [closeModal]);
 
   useEffect(() => {
     if (!isOpen) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeModal();
+      if (e.key === "Escape") handleClose();
     };
     window.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
@@ -35,7 +36,7 @@ export function OrderSummary() {
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
-  }, [isOpen, closeModal]);
+  }, [isOpen, handleClose]);
 
   if (!isOpen) return null;
 
@@ -48,14 +49,18 @@ export function OrderSummary() {
       notes,
     });
     const url = buildWhatsAppUrl(message);
-    window.open(url, "_blank", "noopener,noreferrer");
+
+    if (url) {
+      window.open(url, "_blank", "noopener,noreferrer");
+    }; 
+
 
     clearCart();
     setName("");
     setPhone("");
     setNotes("");
     setPayment(paymentMethods[0]!);
-    closeModal();
+    handleClose();
   };
 
   return (
@@ -64,7 +69,7 @@ export function OrderSummary() {
       role="dialog"
       aria-modal="true"
       aria-label="Resumo do pedido"
-      onClick={closeModal}
+      onClick={handleClose}
     >
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.head}>
@@ -77,7 +82,7 @@ export function OrderSummary() {
           <button
             type="button"
             className={styles.close}
-            onClick={closeModal}
+            onClick={handleClose}
             aria-label="Fechar"
           >
             <X size={18} />
@@ -120,7 +125,7 @@ export function OrderSummary() {
               <button
                 type="button"
                 className={styles.secondary}
-                onClick={closeModal}
+                onClick={handleClose}
               >
                 Continuar escolhendo
               </button>

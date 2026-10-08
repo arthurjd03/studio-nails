@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles, CalendarHeart, Images, SmilePlus, Compass } from "lucide-react";
+import { CalendarHeart, Images, SmilePlus, Compass } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import heroPhoto from "@/assets/hero.webp";
 import styles from "./styles.module.css";

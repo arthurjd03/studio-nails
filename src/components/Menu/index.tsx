@@ -1,7 +1,5 @@
 import { Camera } from "lucide-react";
-
 import styles from "./styles.module.css";
-import { INSTAGRAM_URL } from "@/data/site";
 
 const links = [
   { href: "#aboutme", label: "Sobre" },
