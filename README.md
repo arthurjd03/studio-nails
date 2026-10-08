@@ -40,11 +40,16 @@ studio-nails/
 │   ├── types/                # Definições TypeScript
 │   └── utils/                # Formatação e gerador de mensagem do WhatsApp
 ```
+## Como executar
+```
+- git clone https://github.com/arthurjd03/studio-nails.git
+cd studio-nails
+- npm install
+- npm run dev
+- http:/localhost:3000
+```
 ---
 ## Autor
 
 **Arthur José**
-
-## 📄 Licença
-
-Este projeto foi desenvolvido para o negócio **Studio Nails**. O uso, reprodução ou redistribuição de imagens, identidade visual, informações comerciais e outros conteúdos específicos da marca deve ser autorizado pelos respectivos responsáveis.
+- Projeto desenvolvido com café para fins de estudo focado em Next.js e portfólio.
