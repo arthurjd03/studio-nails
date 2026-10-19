@@ -52,3 +52,6 @@ cd studio-nails
 
 **Arthur José**
 - Projeto desenvolvido com café para fins de estudo focado em Next.js e portfólio.
+---
+## Deploy
+- URL de Produção: [Studio nails](https://studio-nails-oficial.vercel.app/)
